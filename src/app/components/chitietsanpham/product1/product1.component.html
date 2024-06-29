@@ -1,0 +1,340 @@
+<div class="d1">
+
+  <div *ngIf="trangchuData" class="dn">
+    <table class="tn">
+      <tr>
+        <td class="tc">
+          {{ trangchuData.name }}
+        </td>
+        <td>
+          <button class="sosanh">+ So sánh</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <hr style="color: black;">
+  <div class="container" *ngFor="let varcharItem of trangchuData.varchar">
+    <div class="left-div" *ngFor="let color1Item of varcharItem.color1">
+          <div class="selected-image-container" *ngIf="toggleProducts1" style="width: 100%;">
+            <img [src]="selectedImage" alt="Selected Image" class="selected-image img2" [ngStyle]="{'border': selectedImage === color1Item.img1 ?
+            '2px solid #3498db' : 'none', 'box-shadow': selectedImage === color1Item.img1 ? '0 0 5px rgba(0, 0, 0, 0.3)' : 'none',
+            'width': selectedImage === color1Item.img1 ? '250px' : '100%',
+            'height': selectedImage === color1Item.img1 ? '250px' : '398px',
+             'margin-top': selectedImage === color1Item.img1 ? '10.5%' : '0',
+              'margin-left': selectedImage === color1Item.img1 ? '-64%' : '0'
+            }" />
+                <div *ngIf="selectedImage === color1Item.img1" class="image-text">
+                  <h6>TÍNH NĂNG NỔI BẬT</h6>
+                  <ul style="text-align: left;">
+                    <li>Màn hình 6.4 inch Full HD+ mang đến không gian trải nghiệm rộng rãi và sắc nét</li>
+                    <li>Dung lượng pin 5.000 mAh cho thời lượng sử dụng lên đến cả ngày dài liên tục</li>
+                    <li>Đa nhiệm mượt mà với vi xử lý Exynos 1380 kết hợp RAM 8GB và ROM 256GB</li>
+                    <li>Bắt trọn từng khoảnh khắc với hệ thống 3 camera có độ phân giải lên đến 50 MP</li>
+                  </ul>
+                </div>
+          </div>
+          <span *ngFor="let stringItem of trangchuData.string">
+            <span *ngFor="let color2Item of stringItem.color2">
+              <div class="selected-image-container" *ngIf="!toggleProducts1" style="width: 100%;">
+                <img [src]="selectedImage1" alt="Selected1 Image" class="selected-image img2" [ngStyle]="{'border': selectedImage1 === color2Item.img2 ?
+                '2px solid #3498db' : 'none', 'box-shadow': selectedImage1 === color2Item.img2 ? '0 0 5px rgba(0, 0, 0, 0.3)' : 'none',
+                'width': selectedImage1 === color2Item.img2 ? '250px' : '100%',
+                'height': selectedImage1 === color2Item.img2 ? '250px' : '398px',
+                'margin-top': selectedImage1 === color2Item.img2 ? '10.5%' : '0',
+                  'margin-left': selectedImage1 === color2Item.img2 ? '-64%' : '0'
+                }"/>
+                <div *ngIf="selectedImage1 === color2Item.img2" class="image-text">
+                  <h6>TÍNH NĂNG NỔI BẬT</h6>
+                  <ul style="text-align: left;">
+                    <li>Nâng tầm trải nghiệm chiến game cùng màn hình có tần số quét lên đến 120Hz</li>
+                    <li>Chip Exynos 1380 độc quyền giúp xử lý tốt mọi tác vụ từ cơ bản đến nâng cao</li>
+                    <li>Quay video siêu chống rung và chụp đêm cực ấn tượng với bộ 3 camera 50MP</li>
+                    <li>Thiết kế đặc trưng với mặt kính sang trọng, hỗ trợ kháng nước, bụi chuẩn IP67</li>
+                  </ul>
+                </div>
+              </div>
+            </span>
+          </span>
+    </div>
+    <div class="right-div">
+      <!-- Display information from varchar array -->
+      <div class="" *ngFor="let varcharItem of trangchuData.varchar">
+        <!-- Display information from string array -->
+          <div *ngFor="let stringItem of trangchuData.string">
+            <br>
+            <p class="loai">Loại Rom</p>
+            <button class="b1" (click)="toggleProducts1 = !toggleProducts1; toggleProducts2 = false" [class.selected]="toggleProducts1">
+              <!-- Button 4_1 content -->
+              <h3>{{ varcharItem.rom1 }}</h3>
+              <p class="g1"><strong>Price:</strong> <span class="spv">{{ varcharItem.price1 }}</span></p>
+            </button>
+            <button class="b2" (click)="toggleProducts2 = !toggleProducts2; toggleProducts1 = false" [class.selected]="toggleProducts2">
+              <!-- Button 4_2 content -->
+              <h3>{{ stringItem.rom2 }}</h3>
+              <p class="g1"><strong>Price:</strong> <span class="spv">{{ stringItem.price2 }}</span></p>
+            </button>
+            <p class="mau">Màu Sắc</p>
+            <div *ngIf="toggleProducts1">
+                <button *ngFor="let color1Item of varcharItem.color1" class="b3" (click)="showImage(color1Item.img1)" >
+                  <!-- Button 5_1 content -->
+                  <img [src]="color1Item.img1" alt="Color" class="color" />
+                  <p>màu</p>
+                  <p class="g1"><strong>Price:</strong>  <span class="spv">{{ varcharItem.price1 }}</span></p>
+                </button>
+
+              <!-- Display information for button 2 -->
+              <button *ngFor="let color1Item of varcharItem.color1" class="b4" (click)="showImage(color1Item.img1_2)" [class.clicked]=" " >
+                <!-- Button 5_2 content -->
+                <img [src]="color1Item.img1_2" alt="Color" class="color" />
+                <p>màu</p>
+                <p class="g1"><strong>Price:</strong>  <span class="spv">{{ varcharItem.price1 }}</span></p>
+              </button>
+            </div>
+
+            <!-- Display information for button 2 -->
+            <div *ngIf="!toggleProducts1">
+              <button *ngFor="let color2Item of stringItem.color2" class="b3" (click)="showImage1(color2Item.img2)" >
+                <!-- Button 6_1 content -->
+                <img [src]="color2Item.img2" alt="Color" class="color" />
+                <p>màu</p>
+                <p class="g1"><strong>Price:</strong>{{ stringItem.price2 }} </p>
+              </button>
+
+              <!-- Display information for button 2 -->
+              <button *ngFor="let color2Item of stringItem.color2" class="b4" (click)="showImage1(color2Item.img2_1)" >
+                <!-- Button 6_2 content -->
+                <img [src]="color2Item.img2_1" alt="Color" class="color" />
+                <p>màu</p>
+                <p class="g1"><strong>Price:</strong>  {{ stringItem.price2 }}</p>
+              </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container1">
+    <div class="left-div1">
+      <div class="hi" >
+        <span *ngIf="toggleProducts1" >
+          <span *ngFor="let varcharItem of trangchuData.varchar">
+            <span *ngFor="let color1Item of varcharItem.color1">
+              <img [src]="color1Item.img1" alt="{{ color1 }}" class="color3" (click)="showImage(color1.img1)" />
+              <img [src]="color1Item.img1_1_1" alt="Color1" (click)="showImage(color1Item.img1_1_1)" class="color2" />
+              <img [src]="color1Item.img1_1_2" alt="Color1" class="color7" (click)="showImage(color1Item.img1_1_2)"/>
+              <img [src]="trangchuData.img3" alt="{{ trangchuData.name }}" class="color3" (click)="showImage(trangchuData.img3)"/>
+              <img [src]="trangchuData.img3_1" alt="{{ trangchuData.name }}" class="color4"(click)="showImage(trangchuData.img3_2)" />
+              <img [src]="trangchuData.img3_3" alt="{{ trangchuData.name }}" class="color6" (click)="showImage(trangchuData.img3_3)"/>
+              <img [src]="color1Item.img1_1_2" alt="Color1" class="color7" (click)="showImage(color1Item.img1_1_2)"/>
+              <img [src]="trangchuData.img3_4" alt="{{ trangchuData.name }}" class="color8"(click)="showImage(trangchuData.img3_4)" />
+              <img [src]="trangchuData.img3_5" alt="{{ trangchuData.name }}" class="color9" (click)="showImage(trangchuData.img3_5)"/>
+              <img [src]="trangchuData.img3" alt="{{ trangchuData.name }}" class="color10" (click)="showImage(color1Item.img1)"/>
+              <img [src]="color1Item.img1" alt="Color1" class="color11 " (click)="showImage(color1Item.img1)"/>
+              <img [src]="trangchuData.img3" alt="{{ trangchuData.name }}" class="color13" (click)="showImage(trangchuData.img3)"/>
+            </span>
+          </span>
+        </span>
+
+      <span *ngIf="!toggleProducts1" >
+        <span *ngFor="let stringItem of trangchuData.string">
+          <span *ngFor="let color2Item of stringItem.color2">
+            <img [src]="color2Item.img2" alt="{{ color2 }}" class="color1" (click)="showImage1(color2Item.img2)" />
+            <img [src]="color2Item.img2_2_1" alt="Color2" class="color2" (click)="showImage1(color2Item.img2_2_1)" />
+            <img [src]="trangchuData.img3" alt="{{ trangchuData.name }}" class="color3" (click)="showImage1(trangchuData.img3)" />
+            <img [src]="trangchuData.img3_1" alt="{{ trangchuData.name }}" class="color4" (click)="showImage1(trangchuData.img3_1)" />
+            <img [src]="trangchuData.img3_2" alt="{{ trangchuData.name }}" class="color5" (click)="showImage1(trangchuData.img3_2)"/>
+            <img [src]="trangchuData.img3_3" alt="{{ trangchuData.name }}" class="color6" (click)="showImage1(trangchuData.img3_3)"/>
+            <img [src]="color2Item.img2_2_2" alt="Color2" class="color7"(click)="showImage1(color2Item.img2_2_2)" />
+            <img [src]="trangchuData.img3_4" alt="{{ trangchuData.name }}" class="color8" (click)="showImage1(trangchuData.img3_4)"/>
+            <img [src]="trangchuData.img3_5" alt="{{ trangchuData.name }}" class="color9" (click)="showImage1(trangchuData.img3_5)"/>
+            <img [src]="trangchuData.img3" alt="{{ trangchuData.name }}" class="color10" (click)="showImage1(trangchuData.img3)"/>
+            <img [src]="color2Item.img2" alt="Color2" class="color11" (click)="showImage1(color2Item.img2)"/>
+            <img [src]="color2Item.img2_1" alt="Color2" class="color12" (click)="showImage1(color2Item.img2_1)"/>
+            <img [src]="trangchuData.img3" alt="{{ trangchuData.name }}" class="color13" (click)="showImage1(trangchuData.img3)"/>
+          </span>
+        </span>
+      </span>
+      </div>
+    </div>
+    <div class="right-div1">
+      <div class="thanhtoan2">
+        <br>
+        <button class="thanhtoan btn btn-danger">
+          <h1 class="g">Mua ngay</h1>
+          <h3 class="g1">giao nhanh từ 3h hoặc từ của hàng</h3>
+        </button>
+        <button class="cart1 " (click)="addToCart()">
+          <div class="cart"></div>
+          <h3 class="g1">Thêm Giỏ hàng</h3>
+        </button>
+      </div>
+      <div class="thanhtoan1 ">
+        <button class="gop btn btn-primary">
+          <h1 class="tg1">Trả góp 0%</h1>
+          <h3 class="g1">Trả trước chỉ từ 0₫</h3>
+        </button>
+        <button class="gop1 btn btn-primary">
+          <h1 class="tg1">Trả góp qua thẻ</h1>
+          <h3 class="g1">Visa,Mastercard,JCB</h3>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container2" *ngFor="let product of productData">
+    <div class="left">
+      <div class="">
+        <h2>Thông tin sản phẩm</h2>
+        <p><img [src]="product.icondt" alt="Color2" class="idt" />&nbsp;{{ product.new }}</p>
+        <p><img [src]="product.iconbh" alt="Color2" class="ibh" />&nbsp;{{ product.guarantee }}<a class="p1" [routerLink]="['/baohanh']" routerLinkActive="router-link-active">&nbsp;(Xem chi tiết)</a></p>
+        <p><img [src]="product.iconvat" alt="Color2" class="ivat" />&nbsp;{{ product.vat }}</p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="">
+        <div class="divt">
+          <br>
+          <button class="bvt1">Hồ Chí Minh</button>
+          &nbsp;
+          <button class="bvt2">Quận/Huyện</button>
+        </div>
+        <p class="pvt">Số của hàng ... có sản phẩm</p>
+        <p ><span class="red"><a href="tel:" class="pa"><i class="fas fa-phone red"></i>&nbsp;{{ product.sdt1 }}</a></span> - <a href="{{ product.link1 }}"><i class="fas fa-map-marker-alt location-icon"></i>&nbsp;{{ product.map1 }}</a></p>
+        <p ><span class="red"><a href="tel:" class="pa"><i class="fas fa-phone red"></i>&nbsp;{{ product.sdt2 }}</a></span> - <a href="{{ product.link2 }}"><i class="fas fa-map-marker-alt location-icon"></i>&nbsp;{{ product  .map2 }}</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d2">
+    <br>
+    <table class="t1 st ">
+      <p>Thông số kỹ thuật</p>
+      <tr>
+        <td><strong>Price:</strong></td>
+        <td class="">{{ trangchuData.describe}}</td>
+      </tr>
+      <tr>
+        <td><strong>Discount:</strong> </td>
+        <td>{{ trangchuData.discountedPrice }}</td>
+      </tr>
+      <tr>
+        <td><strong>RAM:</strong></td>
+        <td>{{ trangchuData.describe }}</td>
+      </tr>
+      <tr>
+        <td><strong>Operating System:</strong></td>
+        <td>{{ trangchuData.os }}</td>
+      </tr>
+      <tr>
+        <td><strong>Screen Size:</strong></td>
+        <td>{{ trangchuData.screenSize }}</td>
+      </tr>
+      <tr>
+        <td><strong>Screen Technology:</strong></td>
+        <td>{{ trangchuData.screenTechnology }}</td>
+      </tr>
+      <tr>
+        <td><strong>Cameras:</strong></td>
+        <td>{{ trangchuData.cameras }}<br>{{ trangchuData.cameras1 }}<br>{{ trangchuData.cameras2 }}</td>
+      </tr>
+      <tr>
+        <td><strong>FrontCamera:</strong></td>
+        <td>{{ trangchuData.frontCamera }}</td>
+      </tr>
+      <tr>
+        <td><strong>Processor:</strong></td>
+        <td> {{ trangchuData.chip }}</td>
+      </tr>
+    </table>
+  </div>
+
+
+    <div class="dg">
+      <br>
+      <p class="phd">Đánh giá & nhận xét {{ trangchuData.name }}</p>
+        <!-- Add star rating and comment input -->
+      <div class="ddg1">
+        <div >
+          <label class="ldg1" for="starRating">Star Rating:</label>
+          <div class="star-rating">
+            <span class="star" [class.active]="review.star >= 1" (click)="setStarRating(1)">&#9734;</span>
+            <span class="star" [class.active]="review.star >= 2" (click)="setStarRating(2)">&#9734;</span>
+            <span class="star" [class.active]="review.star >= 3" (click)="setStarRating(3)">&#9734;</span>
+            <span class="star" [class.active]="review.star >= 4" (click)="setStarRating(4)">&#9734;</span>
+            <span class="star" [class.active]="review.star >= 5" (click)="setStarRating(5)">&#9734;</span>
+          </div>
+        </div>
+        <div>
+          <p class="ldg1" for="comment">Comment:</p>
+          <textarea class="textarea2" id="comment" [(ngModel)]="review.comment" placeholder="Enter your review"></textarea>
+          <div *ngIf="review.comment.trim() === ''" class="error-message">
+            Comment cannot be empty
+          </div>
+          <button class="bdg1 btn btn-primary" (click)="saveReview()">Submit Review</button>
+        </div>
+      </div>
+
+          <div class="ddg2">
+            <app-thdanhgia ></app-thdanhgia>
+          </div>
+          <div class="ddg3">
+            <div  *ngFor="let review of sortedReviews()">
+              <div class="user-avatar" [ngStyle]="{'background-color': getColorForFirstCharacter(qna.username)}">{{ review.username.charAt(0) | uppercase }}</div>
+                <div class="review-content">
+                  <p class="user-info">
+                    {{ review.username }} -
+                    <span *ngFor="let i of [1, 2, 3, 4, 5]">
+                      <span class="star" [class.active]="i <= review.star">&#9734;</span>
+                    </span>&nbsp;
+                    <i class="fa fa-calendar"></i> {{ review.date }} - <i class="fa fa-clock"></i> {{ review.clock }}
+                  </p>
+                  <p class="comment">{{ review.comment }}</p>
+                </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="hd">
+      <div class="dhd1">
+        <br>
+        <p class="v1">Hỏi đáp</p>
+        <div>
+          <p for="qnaComment" class="phd1">Hỏi và Đáp:</p>
+          <textarea id="qnaComment" [(ngModel)]="qna.comment" class="textarea2" placeholder="Enter your comment"></textarea>
+        </div>
+        <button (click)="saveQnA()" class="btn btn-primary">Submit Q&A</button>
+        <p *ngIf="qnaError" class="error">{{ qnaError }}</p>
+      </div>
+      <!-- your.component.html -->
+          <!-- product1.component.html -->
+          <div *ngFor="let qna of sortedQan()" class="dhd1">
+            <div class="user-avatar" [ngStyle]="{'background-color': getColorForFirstCharacter(qna.username)}">
+              {{ qna.username.charAt(0) | uppercase}}
+            </div>
+            <div style="margin-top: -25px;margin-left: 30px;">
+              <p><span class="s1">{{ qna.username }}</span> - <i class="fas fa-calendar"></i> {{ qna.date }} - <i class="fas fa-clock"></i> {{ qna.clock }}</p>
+              <p>{{ qna.comment }}</p>
+            </div>
+          </div>
+          <div *ngFor="let staff of sortedstaff()" class="dhd1">
+            <div class="user-avatar" [ngStyle]="{'background-color': getColorForFirstCharacter(qna.username)}">
+              {{ staff.userStaff.charAt(0) | uppercase}}
+            </div>
+            <div style="margin-top: -25px;margin-left: 30px;">
+              <p><span class="s1">{{ staff.userStaff }}</span> - <i class="fas fa-calendar"></i> {{ staff.date }} - <i class="fas fa-clock"></i> {{ staff.clock }}</p>
+              <p>{{ staff.comment }}</p>
+            </div>
+          </div>
+
+      <div class="dhd1">
+        <p>Phản hồi</p>
+        <textarea [(ngModel)]="staff.comment" placeholder="Enter your comment" class="textarea2"></textarea><br>
+        <button (click)="addStaffComment()" class="btn btn-primary">Add Comment</button>
+        <p *ngIf="staffError" class="error">{{ staffError }}</p>
+      </div>
+
+    </div>
+
+</div>
+<hr style="color: rgb(14, 14, 14);width: 100%;">
+<app-lienhe></app-lienhe>

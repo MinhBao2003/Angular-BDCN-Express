@@ -1,0 +1,32 @@
+/* chatao.component.css */
+.chat-form {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 40px; /* Chiều cao ban đầu khi đóng */
+  border: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.open {
+  height: 350px !important; /* Chiều cao khi mở rộng */
+}
+
+.chat-icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999; /* Đảm bảo biểu tượng nằm trên cùng */
+}
+
+.chat-icon {
+  font-size: 30px; /* Điều chỉnh kích thước biểu tượng theo yêu cầu */
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Các phần còn lại của CSS */

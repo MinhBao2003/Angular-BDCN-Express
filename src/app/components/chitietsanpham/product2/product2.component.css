@@ -1,0 +1,27 @@
+/* styles.css or your component-specific stylesheet */
+.product-details {
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+.product-image {
+  max-width: 200px;
+  margin-right: 20px;
+}
+
+.product-info {
+  flex-grow: 1;
+}
+
+.variant-item, .color-item {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.color-image {
+  max-width: 50px;
+  margin-right: 10px;
+}

@@ -1,0 +1,24 @@
+.snowfall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8); /* Màu sắc với độ trong suốt */
+  border-radius: 50%; /* Làm tròn cục tuyết */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Độ đổ bóng */
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(200vh);
+  }
+}

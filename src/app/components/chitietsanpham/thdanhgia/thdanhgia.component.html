@@ -1,0 +1,16 @@
+<!-- review.component.html -->
+<div *ngIf="reviews.length > 0" style="margin: 7%;width: 95%;" >
+    <h2 style="text-align: center;font-size: 24px;font-weight: bold;">Tổng hợp Đánh giá</h2>
+    <ng-container *ngFor="let ratedCount of ratedCounts" style="">
+      <p style=""> {{ ratedCount.stars }} <i class="fas fa-star" style="color: yellow;"></i></p>
+
+      <!-- Thanh ngang -->
+      <div style="margin-top: -11%;margin-left: 18%;height: 10px; width: 35%; background-color: rgb(248, 246, 246); margin-bottom: 5px;border-radius: 7px;">
+        <div [style.width.%]="(ratedCount.count / reviews.length) * 100" style="height: 100%; background-color: red;border-radius: 6px;"></div>
+      </div> <p style="margin-top: -8%;margin-left: 59%;">Đánh giá {{ ratedCount.count }}</p>
+    </ng-container>
+  </div>
+
+  <div *ngIf="reviews.length === 0">
+    <p>Loading reviews...</p>
+  </div>

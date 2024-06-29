@@ -1,0 +1,18 @@
+<!-- chat.component.html -->
+
+<!-- chat.component.html -->
+<div class="chat-form" [ngClass]="{'open': isChatOpen}">
+  <div class="chat-icons">
+    <i class="fas fa-comment chat-icon" (click)="openZalo()"></i>
+    <i class="fas fa-envelope chat-icon" (click)="openGmail()"></i>
+  </div>
+  <div class="chat-header" (click)="toggleChat()">Chat Ảo ĐTO</div>
+  <div class="chat-body">
+    <div *ngFor="let entry of chatHistory" [ngClass]="{'user-message': entry.role === 'user', 'assistant-message': entry.role === 'assistant'}">
+      {{ entry.message }}
+    </div>
+  </div>
+  <textarea class="chat-input" placeholder="Nhập tin nhắn của bạn..." [(ngModel)]="userInput" (keyup.enter)="handleUserMessage()"></textarea>
+  <button class="resize-button" (click)="toggleChat()">Thu nhỏ/Phóng to</button>
+</div>
+

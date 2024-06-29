@@ -1,0 +1,9 @@
+<div class="snowfall">
+  <div *ngFor="let snowflake of snowflakes"
+       class="snowflake"
+       [style.left]="snowflake.left + '%'"
+       [style.animation-duration]="snowflake.animationDuration + 's'"
+       [style.width.px]="snowflake.size"
+       [style.height.px]="snowflake.size">
+  </div>
+</div>

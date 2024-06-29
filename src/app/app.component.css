@@ -1,0 +1,18 @@
+/* styles.css or styles.scss */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+/* styles.css */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+/* app.component.css */
+app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Điều này đảm bảo thanh nằm trên cùng của tất cả các phần tử khác */
+}
+
+main {
+  margin-top: 120px;
+  width: 100%;
+  /* Điều này giữ cho nội dung trong phần main không bị che phủ bởi thanh navbar */
+}

@@ -1,0 +1,41 @@
+<!-- trangchu.component.html -->
+<div *ngIf="trangchuData" class="product-details">
+  <img [src]="trangchuData.img" alt="{{ trangchuData.name }}" class="product-image" />
+  <div class="product-info">
+    <h2>{{ trangchuData.name }}</h2>
+    <p>Price: {{ trangchuData.discountedPrice }}</p>
+    <p>Description: {{ trangchuData.describe }}</p>
+    <p>Operating System: {{ trangchuData.os }}</p>
+    <p>Screen Size: {{ trangchuData.screenSize }}</p>
+    <p>Screen Technology: {{ trangchuData.screenTechnology }}</p>
+    <p>Cameras: {{ trangchuData.cameras }}</p>
+    <p>Front Camera: {{ trangchuData.frontCamera }}</p>
+    <p>Chip: {{ trangchuData.chip }}</p>
+
+    <!-- Display information from varchar array -->
+    <div *ngFor="let varcharItem of trangchuData.varchar" class="variant-item">
+      <p>ROM: {{ varcharItem.rom1 }}</p>
+      <p>Price: {{ varcharItem.price1 }}</p>
+      <!-- Add more properties as needed -->
+
+      <!-- Display information from color1 array -->
+      <div *ngFor="let color1Item of varcharItem.color1" class="color-item">
+        <img [src]="color1Item.img1" alt="Color" class="color-image" />
+        <!-- Add more properties as needed -->
+      </div>
+    </div>
+
+    <!-- Display information from string array -->
+    <div *ngFor="let stringItem of trangchuData.string" class="variant-item">
+      <p>ROM: {{ stringItem.rom2 }}</p>
+      <p>Price: {{ stringItem.price2 }}</p>
+      <!-- Add more properties as needed -->
+
+      <!-- Display information from color2 array -->
+      <div *ngFor="let color2Item of stringItem.color2" class="color-item">
+        <img [src]="color2Item.img2" alt="Color" class="color-image" />
+        <!-- Add more properties as needed -->
+      </div>
+    </div>
+  </div>
+</div>

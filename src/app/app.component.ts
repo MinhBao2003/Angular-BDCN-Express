@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WebBanHang';
+  isNavbarFixed = false;
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    const scrollPosition = window.scrollY;
+    this.isNavbarFixed = scrollPosition > 50;
+  }
 }

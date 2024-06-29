@@ -1,0 +1,52 @@
+<!-- app.component.html -->
+<app-tyuet></app-tyuet>
+
+<div id="carouselExample" class="carousel slide c1" data-bs-ride="carousel">
+  <div class="carousel-inner c1">
+    <div class="carousel-item active c1">
+      <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/11/banner/DT-Topbar-1200-44-1200x44-1.png" class="d-block w-100 img" alt="...">
+    </div>
+    <div class="carousel-item c1">
+      <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/10/banner/Big-1200-44-1200x44.png" class="d-block w-100 img" alt="...">
+    </div>
+    <div class="carousel-item c1">
+      <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/11/banner/74128A66-B7DD-48FC-94F6-98F12A413F22-1200x44.png" class="d-block w-100 img" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev  " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon  " aria-hidden="true"></span>
+    <span class="visually-hidden  ">Previous</span>
+  </button>
+  <button class="carousel-control-next  " type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon  " aria-hidden="true"></span>
+    <span class="visually-hidden  ">Next</span>
+  </button>
+</div>
+<div class="navbar ">
+  <div class="search">
+    <div class="logo">Điện Thoại Online</div>
+    <input class="text" type="text" placeholder="Tìm kiếm...">
+  </div>
+  <br>
+  <div class="nav-container">
+    <ul class="nav-list">
+        <li class="li1"><a [routerLink]="['/trangchu']" routerLinkActive="router-link-active" >Trang chủ</a></li>
+        <li class="li2"><a [routerLink]="['/lienhe']" routerLinkActive="router-link-active" >Liên hệ</a></li>
+        <li class="li3"><a [routerLink]="['/giohang']" routerLinkActive="router-link-active" >Giỏ hàng</a></li>
+        <ng-container *ngIf="!isLoggedIn()">
+          <li class="li4"><a [routerLink]="['/dangnhap']" routerLinkActive="router-link-active">Đăng nhập</a></li>
+        </ng-container>
+
+        <!-- Show only if the user is logged in -->
+        <ng-container *ngIf="isLoggedIn()">
+          <li><span>{{ getUsername() }}</span></li>
+          <li><button (click)="logout()">Đăng xuất</button></li>
+        </ng-container>
+        <li class="li5"><a [routerLink]="['/vitri']" routerLinkActive="router-link-active" >Vị trí</a></li>
+    </ul>
+  </div>
+  <!-- <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2020/03/Samsung-Galaxy-M21-leaked-image.jpg" alt="Left Image" class="left-image">
+  <img src="https://bachlongmobile.com/bnews/wp-content/uploads/2022/09/tren-tay-iphone-14-plus-0.png" alt="Right Image" class="right-image"> -->
+</div>
+
+

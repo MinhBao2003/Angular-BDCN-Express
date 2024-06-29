@@ -1,0 +1,94 @@
+<div>
+  <div class="d">
+  <div id="carouselExampleAutoplaying" class="carousel slide div1" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active ">
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/15-pro-max-sliding-new-th11.jpg" class="d-block w-100 imgd" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/tab-se-fe-5g-docquyen-001-sliding.png" class="d-block w-100 imgd" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/samsung-galaxy-s23-ultra-sliding-th111.png" class="d-block w-100 imgd" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div>
+    <div class="dm1"><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/m14.png" alt="" class="img1"></div>
+    <div><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/gen%209.jpg" alt="" class="img2"></div>
+    <div><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/rb%20laptop.png" alt="" class="img3"></div>
+  </div>
+  <div class="div3 ">
+    <br>
+    <div class="divf">
+      <div class="divh">Điện Thoại,TV</div>
+      <div class="divw">LapTop,IT</div>
+      <div class="divq">Đồng Hồ,Tai Nghe</div>
+    </div>
+
+    <!-- <div class="lightning"></div> -->
+
+      <p class="changing-text p1">Sale cuối năm 2023</p>
+      <div class="db">
+        <p class="blinking-text ">
+          Số ngày còn lại {{ hours }} : {{ minutes | number: '2.0' }} : {{ seconds | number: '2.0' }}
+        </p>
+      </div>
+      <div class="product-list-container">
+        <div class="e1">
+          <div class="product-list">
+            <div *ngFor="let pr of displayedProducts; let i = index" class="product" [ngClass]="{'visible': i === currentIndex}">
+              <a [routerLink]="['/product', pr.id]" class="product-link">
+                <div class="product-inner">
+                  <div><img src="{{ pr.img }}" alt="" class="img4"></div>
+                  <div class="name">{{ pr.name }}</div><br>
+                  <div class="c1">{{ pr.price }}</div>
+                  <div class="hot-text c1">{{ pr.hot }}</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navigation-buttons">
+          <button (click)="previousPage()" [disabled]="currentPage === 1">&lt;</button>
+          <button (click)="nextPage()" [disabled]="currentPage === totalPages">&gt;</button>
+        </div>
+      </div>
+  </div>
+
+  <div class="phonebt">
+    <div class="phone">
+      <div class="phone1">
+        <h4>ĐIỆN THOẠI NỔI BẬT NHẤT</h4>
+      </div>
+      <div class="phone2">
+        <span class="sphone">
+          <button class="ap">Apple</button>
+          <button class="ss">Samsung</button>
+          <button class="xm">Xiaomi</button>
+          <button class="rm">Realme</button>
+          <button class="nk">Nokia</button>
+          <button class="as">Asus</button>
+          <button class="xtc">Xem tất cả</button>
+        </span>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>
+<hr style="color: aqua;">
+<app-lienhe></app-lienhe>
+</div>
+

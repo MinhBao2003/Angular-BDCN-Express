@@ -1,0 +1,304 @@
+img{
+  max-width: 100%;
+  height: 350px;
+  border-radius: 5px;
+}
+/*căn giữa thanh lướt*/
+.d{
+  background-color: antiquewhite;
+  max-width: 80%;
+  margin-left: 10%;
+}
+.div1{
+  max-width: 65%;
+  height: 350px;
+  border-radius: 5px;
+}
+.img1{
+  width: 34.7%;
+  height: 111px;
+  margin-top: -350px;
+  float:right;
+}
+.img2{
+  width: 34.7%;
+  height: 111px;
+  margin-top: -230px;
+  float:right;
+}
+.img3{
+  width: 34.7%;
+  height: 111px;
+  margin-top: -111px;
+  float:right;
+
+}
+.c1{
+  font-size: 16px;
+  font-weight: bold;
+}
+.name{
+  font-weight: bold;
+  color: rgb(223, 47, 47);
+  height: 85px;
+  font-size: 14px;
+}
+.divf {
+  display: flex;
+  max-width: 40%;
+  margin-top: 1%;
+  font-weight: bold;
+  color: white;
+}
+
+.divh, .divw, .divq {
+  flex: 1;
+  padding: 5px;
+  text-align: center;
+  background-color: #a1dc936e; /* Set a background color for better visualization */
+  border-radius: 5px;
+  margin: 0 5px; /* Adjust as needed to create space between the divs */
+  height: 12%;
+  overflow: hidden; /* Prevent text overflow */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+.divh, .divw, .divq p {
+  flex-shrink: 1;
+  max-width: 100%; /* Ensure the text doesn't exceed the width of the div */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+.div3{
+  background-color: rgb(138 233 202 / 61%);;
+  height: 450px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Hiệu ứng đường viền mờ dần */
+  margin-top: 7px;
+}
+.p1{
+  /* margin-top: -130px; */
+
+}
+.d1{
+  margin-top: 95px;
+  margin-left: 900px;
+}
+.img4{
+  max-width: 100%;
+  height: 150px;
+}
+.hot-text {
+  text-decoration: line-through; /* Thêm gạch ngang */
+}
+.product-list-container {
+  max-width: 100%;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden; /* Đảm bảo không xuất hiện thanh cuộn ngang nếu có */
+}
+a {
+  text-decoration: none;
+}
+.product-list {
+  display: flex;
+  flex-wrap: nowrap; /* Ngăn các mặt hàng xuống dòng khi không đủ chiều rộng */
+  justify-content: flex-start;
+  margin: -5px;
+  transition: transform 0.3s ease; /* Để thêm hiệu ứng chuyển động khi thay đổi trang */
+  margin-top: 1%;
+}
+.e1{
+  margin-left: 5px;
+}
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: aliceblue;
+  border: 2px solid black;
+  width: 233px;
+  height: 350.2px;
+}
+
+.navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-buttons button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navigation-buttons button:disabled {
+  background-color: #dddddd;
+  color: #666666;
+  cursor: not-allowed;
+}
+.q1{
+  width: 200px;
+}
+.phonebt{
+  margin-top: 1%;
+}
+/* Thiết lập kích thước chung cho phone */
+.phone {
+  width: 100%;
+  display: flex; /* Sử dụng flexbox để căn chỉnh các phần theo chiều ngang */
+}
+
+/* Phần phone1 chiếm 30% */
+.phone1 {
+  flex: 0 0 30%; /* flex-grow: 0; flex-shrink: 0; flex-basis: 30%; */
+  overflow: hidden; /* Ẩn nội dung bị tràn ra khỏi phần này */
+}
+/* Style cho h6 */
+.phone1 h4 {
+  white-space: nowrap; /* Ngăn chữ xuống dòng */
+  overflow: hidden; /* Ẩn nội dung bị tràn ra khỏi h6 */
+  text-overflow: ellipsis; /* Hiển thị dấu chấm (...) nếu nội dung quá dài */
+}
+/* Phần phone2 chiếm 70% */
+.phone2 {
+  flex: 0 0 70%; /* flex-grow: 0; flex-shrink: 0; flex-basis: 70%; */
+}
+
+/* Style button (tuỳ thuộc vào thiết kế của bạn) */
+.phone2 button {
+  margin-right: 0.5%; /* Khoảng cách giữa các button, có thể điều chỉnh theo ý muốn */
+  white-space: nowrap; /* Ngăn chữ xuống dòng */
+  overflow: hidden; /* Ẩn nội dung bị tràn ra khỏi button */
+  text-overflow: ellipsis; /* Hiển thị dấu chấm (...) nếu nội dung quá dài */
+}
+
+/* Phần xem tất cả sử dụng flex-end để căn chỉnh về cuối phần */
+.phone2 button:last-child {
+  margin-left: 0; /* Không có khoảng cách nếu là button cuối cùng */
+  margin-right: auto; /* Căn chỉnh về phía cuối phần */
+}
+.sphone{
+  margin-left: 40%;
+}
+.ap{
+  width: 7%;
+  border-radius: 8px;
+}
+.ss{
+  width: 10%;
+  border-radius: 8px;
+}
+.xm{
+  width: 8%;
+  border-radius: 8px;
+}
+.rm{
+  width: 8%;
+  border-radius: 8px;
+}
+.nk{
+  width: 7%;
+  border-radius: 8px;
+}
+.as{
+  width: 6%;
+  border-radius: 8px;
+}
+.xtc{
+  width: 11%;
+  border-radius: 8px;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.db{
+  margin-top: -20px;
+  /* margin-left: 80%; */
+  text-align: end;
+  padding: 1%;
+  width: 100%;
+  height: 10px;
+}
+.blinking-text {
+  animation: blink 1s infinite; /* Thiết lập animation với tên 'blink', thời gian 1 giây, và lặp vô hạn */
+  color: red; /* Màu chữ */
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+@keyframes colorChange {
+  0% {
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.changing-text {
+  animation: colorChange 5s infinite; /* Change '5s' to adjust the duration */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  /* margin-left: 200px; */
+  margin-top: -70px;
+}
+
+@keyframes lightning {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.lightning {
+  position: relative;
+  height: 100px;
+  background: url('https://imgur.com/a/SooJqSK') no-repeat center center;
+  background-size: contain;
+  animation: lightning 3s infinite;
+  width: 30px;
+}
+@media screen and (max-width: 430px) {}
+@media screen and (min-width: 1024px) and (max-width: 1024px) {
+
+}
+

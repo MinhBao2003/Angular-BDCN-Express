@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		},
+		{
+			"path": "../../../../../../../APi - Fake"
+		},
+		{
+			"path": "../../../../../../../Ôn Tốt nghiệp 15 1/Thuchanhweb"
+		},
+		{
+			"path": "../../../../../../../../dowload/BTO_Animation"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "BTO_Animation"
+	}
+}

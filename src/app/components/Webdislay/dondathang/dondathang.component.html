@@ -1,0 +1,68 @@
+<div style="width: 40%; margin-left: 30%;">
+
+  <!-- your-component.component.html -->
+  <div *ngFor="let order of carts" style="border: 1px solid #ddd; background: #fff; border-radius: 5px; margin-bottom: 10px; padding: 10px;">
+    <div *ngIf="order.id">
+      <img [src]="order.img" alt="" style="width: 20%;">
+      <div style="margin-top: -20%; margin-left: 23%;">
+        <p>{{ order.name }} </p>
+        <p>Rom{{ order.rom }}</p>
+        <p>Ram {{order.ram}}</p>
+        <p>{{ order.price }}</p>
+        <p>Số Lượng{{ order.quantity }}</p>
+        <p>TỔNG GIÁ: {{ order.money * order.quantity }}0.000₫</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ttkh">
+    <p>THÔNG TIN KHÁCH HÀNG</p>
+    <div style="margin-left: 5%;">
+      <div>
+        <label>Họ và Tên:</label>
+        <input type="text" name="namekhach" [(ngModel)]="namekhach" required style="border: none; border-bottom: 1px solid #ddd; outline: none; padding: 5px; margin-bottom: 10px;width: 70%;">
+      </div>
+      <!-- your-component.component.html -->
+    <div>
+      <label>Số điện thoại:</label>
+      <input type="text" name="sdt" [(ngModel)]="sdt"
+      (blur)="checkPhoneNumber()"
+      maxlength="10" style="border: none; border-bottom: 1px solid #ddd; outline: none;
+      padding: 5px; margin-bottom: 10px;width: 70%;">
+      <div *ngIf="showPhoneNumberError" style="color: red;">Số điện thoại phải có đúng 10 số.</div>
+    </div>
+
+      <div>
+        <label>Email:</label>
+        <input name="email" id="" [(ngModel)]="email" type="email" required style="border: none; border-bottom: 1px solid #ddd; outline: none; padding: 5px; margin-bottom: 10px;width: 70%;">
+      </div>
+    </div>
+  </div>
+
+  <div class="ttdh">
+    <p>THÔNG TIN ĐƠN HÀNG</p>
+    <div style="margin-left: 5%;">
+      <div>
+        <label>Địa chỉ nhận:</label>
+        <input type="text" name="dcnh" [(ngModel)]="dcnh" required style="border: none; border-bottom: 1px solid #ddd; outline: none; padding: 5px; margin-bottom: 10px;width: 70%;">
+      </div>
+      <div>
+        <label>Địa chỉ của hàng:</label>
+        <select id="selectedLocation" name="dcch" [(ngModel)]="dcch" required style="border: none; border-bottom: 1px solid #ddd; outline: none; padding: 5px; margin-bottom: 10px;width: 70%;">
+          <option value="" disabled selected>Chọn địa chỉ</option>
+          <option value="Định Quán, Đồng Nai">Định Quán, Đồng Nai</option>
+          <option value="Đặng Văn Bi, Thủ Đức, Thành phố Hồ Chí Minh">Đặng Văn Bi, Thủ Đức, Thành phố Hồ Chí Minh</option>
+        </select>
+      </div>
+      <div>
+        <label>Ghi chú:</label>
+        <input type="text" name="note" [(ngModel)]="note" style="border: none; border-bottom: 1px solid #ddd; outline: none; padding: 5px; margin-bottom: 10px;width: 70%;">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dh">
+    <button (click)="placeOrder()"  style="background-color: #007BFF; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Đặt hàng</button>
+  </div>
+</div>

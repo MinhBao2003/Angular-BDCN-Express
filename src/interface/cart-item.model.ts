@@ -1,15 +1,14 @@
-// cart-item.model.ts
 export interface CartItem {
-  id: string; // Replace with the actual type for your item id
-  userId: string; // Replace with the actual type for your user id
-  id_product: number; // Replace with the actual type for your product id
-  username: string;
-  permission: string;
-  role: string;
-  name: string;
-  price: string; // Replace with the actual type for your price
+  ram: string;
+  rom: string;
+  id: number;
+  color:string;
+  name:string;
+  price: number;
+  money: number;
   img: string;
   date: string;
   clock: string;
   quantity: number;
+  isSelected?: boolean;
 }

@@ -1,0 +1,96 @@
+<div class="dphone">
+  <p class="sticky-element"><span class="apple">Đồng hồ</span><span class="apple">Samsung</span></p>
+  <div class="dt">
+    <div class="child dm1">
+      <!-- Nội dung của div con 1 -->
+    </div>
+    <div class="child dm2">
+      <!-- Nội dung của div con 2 -->
+    </div>
+  </div>
+  <div>
+    <p class="pb">Chọn theo tiêu chí</p>
+    <select id="clock" name="clock" [(ngModel)]="selectedclock" (click)="refreshPage()" (change)="onclockSelect()">
+      <option value="" disabled selected>Thời gian sử dung</option>
+      <option value="4ngay">4ngay</option>
+      <option value="2ngay">2ngay</option>
+      <option value="36h">36h</option>
+    </select>
+    <select id="size" name="size" [(ngModel)]="selectedsize" (click)="refreshPage()" (change)="onsizeSelect()">
+      <option value="" disabled selected>Kích thước</option>
+      <option value="44mm">44mm</option>
+      <option value="45mm">45mm</option>
+      <option value="47mm">47mm</option>
+      <option value="49mm">49mm</option>
+    </select>
+    <select id="day" name="day" [(ngModel)]="selectedday" (click)="refreshPage()" (change)="ondaySelect()">
+      <option value="" disabled selected>Loại dây</option>
+      <option value="Cao su">Dây cao su</option>
+      <option value="thep">thep</option>
+    </select>
+  </div>
+  <div>
+    <p class="pb">Sắp Xếp theo</p>
+    <button (click)="sortByPriceDescending()" [class.priceDescending]="isPriceDescendingClicked">Giá Cao - Thấp</button>
+    <button (click)="sortByPriceAscending()" [class.priceAscending]="isPriceAscendingClicked">Giá Thấp - Cao</button>
+    <button (click)="sortByDiscountDescending()" [class.discountDescending]="isDiscountDescendingClicked">Khuyến Mãi hot</button>
+  </div>
+    <!-- phone-list.component.html -->
+  <div class="phone" *ngIf="donghos.length > 0">
+    <div *ngFor="let laptop of donghos" class="phone-card">
+      <a [routerLink]="['/', laptop.name, laptop.id]">
+        <div style="text-align: center;"><img [src]="laptop.img" alt="{{ laptop.prname }}" class="imgp"></div>
+        <div style="height: 48px;font-weight: bold;color: black;font-size: 14px;"><p>{{ laptop.prname }}</p></div>
+        <div style="margin-top: 8%;">
+          <ng-container *ngIf="laptop.size.trim() !== ''">
+            <span>{{ laptop.size }}</span>
+          </ng-container>
+          <ng-container *ngIf="laptop.day.trim() !== ''">
+            <span>{{ laptop.day }}</span>
+          </ng-container>
+          <span>{{laptop.clock}}</span>
+        </div>
+        <div style="margin-top: 14%;font-size: 14px;">
+          <p style="color: red;font-weight: bold;">{{ laptop.price }}</p>
+          <p style="color: black;font-weight: bold;"><s>{{ laptop.discountedPrice }}</s></p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="donghos.length === 0">
+    <p>Sản Phẩm Đã Hết Hàng.</p>
+  </div>
+
+  <div class="d1">
+    <div *ngIf="questionData">
+      <div><p class="p2">Câu hỏi thường gặp</p></div>
+      <p (click)="toggleSection('section1')" class="p1">{{questionData.note }}<em >&gt;</em> </p>
+      <div *ngIf="isSectionOpen('section1')" class="section-content">
+        <p class="papple">{{questionData.note_1}}</p>
+        <p>{{questionData.note_1_2}}</p>
+      </div>
+
+      <p (click)="toggleSection('section2')"  class="p1">{{questionData.note_3 }}<em >&gt;</em> </p>
+      <div *ngIf="isSectionOpen('section2')" class="section-content">
+        <p>{{questionData.note_3_}}</p>
+        <p>{{questionData.note_3_1}}</p>
+        <p>{{questionData.note_3_2}}</p>
+      </div>
+
+      <p (click)="toggleSection('section3')"  class="p1">{{questionData.note_4 }}<em >&gt;</em> </p>
+      <div *ngIf="isSectionOpen('section3')" class="section-content">
+        <p>{{questionData.note_4_1}}</p>
+        <p>{{questionData.note_4_2}}</p>
+      </div>
+
+  </div>
+
+  <div *ngIf="!questionData">
+    <p>Loading...</p>
+  </div>
+
+  </div>
+
+</div>
+<hr color="black">
+<app-lienhe></app-lienhe>

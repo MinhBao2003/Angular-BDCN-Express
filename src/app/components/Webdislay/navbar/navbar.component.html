@@ -32,7 +32,7 @@
     <ul class="nav-list">
         <li class="li1"><a [routerLink]="['/trangchu']" routerLinkActive="router-link-active" >Trang chủ</a></li>
         <li class="li2"><a [routerLink]="['/lienhe']" routerLinkActive="router-link-active" >Liên hệ</a></li>
-        <li class="li3"><a [routerLink]="['/giohang']" routerLinkActive="router-link-active" >Giỏ hàng</a></li>
+        <li class="li3"><a [routerLink]="['/giohang']" routerLinkActive="router-link-active" >Giỏ hàng {{ maxItemId }}</a></li>
         <ng-container *ngIf="!isLoggedIn()">
           <li class="li4"><a [routerLink]="['/dangnhap']" routerLinkActive="router-link-active">Đăng nhập</a></li>
         </ng-container>
@@ -43,10 +43,14 @@
           <li><button (click)="logout()">Đăng xuất</button></li>
         </ng-container>
         <li class="li5"><a [routerLink]="['/vitri']" routerLinkActive="router-link-active" >Vị trí</a></li>
+        <li class="li5"><a [routerLink]="['/datthanhcong']" routerLinkActive="router-link-active" >Đơn hàng</a></li>
     </ul>
   </div>
-  <!-- <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2020/03/Samsung-Galaxy-M21-leaked-image.jpg" alt="Left Image" class="left-image">
-  <img src="https://bachlongmobile.com/bnews/wp-content/uploads/2022/09/tren-tay-iphone-14-plus-0.png" alt="Right Image" class="right-image"> -->
-</div>
 
+
+</div>
+<div>
+  <!-- <img src="https://i.9mobi.vn/cf/images/2015/12/tvm/hinh-nen-giang-sinh-ung-dung-tao-wallpapers-noen-3.jpg" alt="left-image" class="left-image">
+  <img src="https://2.bp.blogspot.com/-ftaF9jrz8Lg/WjUovn_AyHI/AAAAAAAAAOQ/0zOzr65nEpsDON32sxfpSNJSSILO2MrkgCLcBGAs/s1600/qua-chuong-giang-sinh.png" alt="Right Image" class="right-image"> -->
+</div>
 

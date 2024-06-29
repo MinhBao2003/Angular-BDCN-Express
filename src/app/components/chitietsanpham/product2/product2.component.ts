@@ -14,13 +14,13 @@ export class Product2Component{
 
   ngOnInit(): void {
     this.trangchuService.getData().subscribe((data: TrangchuModel[]) => {
-      // Chỉ lấy dữ liệu từ id 11
-      const foundItem = data.find((item: TrangchuModel) => item.id === 11);
+      // Chỉ lấy dữ liệu từ id 1
+      const foundItem = data.find((item: TrangchuModel) => item.id === 1);
 
       if (foundItem) {
         this.trangchuData = foundItem;
       } else {
-        console.error('Item with id 11 not found');
+        console.error('Item with id 1 not found');
       }
     });
   }

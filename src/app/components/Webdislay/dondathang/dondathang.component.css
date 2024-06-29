@@ -1,0 +1,33 @@
+
+
+.ttkh{
+  border: 1px solid #ddd;
+  background: #fff;
+  margin-top: 5%;
+  padding: 5px;
+  border-radius: 5px;
+}
+.dh{
+  text-align: center;
+}
+.ps{
+  border: 1px solid #ddd;
+  background: #fff;
+  margin-top: 5%;
+  padding: 5px;
+  border-radius: 5px;
+}
+.ttdh{
+  border: 1px solid #ddd;
+  background: #fff;
+  margin-top: 5%;
+  padding: 5px;
+  border-radius: 5px;
+}
+button{
+  margin-top: 2%;
+}
+@media screen and (max-width: 430px) {
+}
+@media screen and (min-width: 1024px) and (max-width: 1024px) {
+}

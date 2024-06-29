@@ -1,6 +1,6 @@
-.container {
-  width: 300px;
-  margin: 0 auto;
+.dv {
+  width: 80%;
+  margin-left: 10%;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -44,4 +44,8 @@ button.btn {
 
 button.btn:hover {
   background-color: #45a049;
+}
+@media screen and (max-width: 430px) {
+}
+@media screen and (min-width: 1024px) and (max-width: 1024px) {
 }

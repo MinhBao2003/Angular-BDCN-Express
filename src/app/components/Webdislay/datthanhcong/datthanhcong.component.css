@@ -1,0 +1,43 @@
+/* example.component.css */
+
+.orders-container {
+  margin-top: 20px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th, .orders-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.orders-table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+}
+
+.orders-table td {
+  text-align: left;
+}
+
+.orders-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.orders-table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+.nav-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: 90%;
+  margin-top: 10px;
+  list-style-type: none;
+}

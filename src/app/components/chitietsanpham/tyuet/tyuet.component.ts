@@ -1,4 +1,3 @@
-//import { animate, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
 interface Snowflake {
@@ -16,22 +15,13 @@ interface Snowflake {
         query('.snowflake', [
           style({ transform: 'translateY(-100vh)' }),
           stagger(100, [
-            animate('2s', style({ transform: 'translateY(100vh)' }))
-          ])
-        ])
-      ])
-    ])
-  ]
-})
+            animate('2s', style({ transform: 'translateY(100vh)' }))])])])])]})
 export class TyuetComponent implements OnInit{
   snowflakes: any[] = [];
-
   constructor() { }
-
   ngOnInit(): void {
     this.generateSnowflakes();
   }
-
   private generateSnowflakes() {
     for (let i = 0; i < 50; i++) {
       this.snowflakes.push({

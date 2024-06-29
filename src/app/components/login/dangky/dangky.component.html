@@ -1,4 +1,4 @@
-<div class="container">
+<div class="dv">
   <h2>Đăng ký</h2>
   <form>
     <div class="form-group">
@@ -18,15 +18,16 @@
       <input type="tel" id="sdt" [(ngModel)]="sdt" name="sdt" required>
     </div>
     <button class="btn" (click)="dangKy()">Đăng ký</button>
-    <!-- Display general error message -->
-<div *ngIf="errorMessage">{{ errorMessage }}</div>
 
-<!-- Display specific error messages -->
-<div *ngIf="tenDangNhapError">{{ tenDangNhapError }}</div>
-<div *ngIf="matKhauError">{{ matKhauError }}</div>
-<div *ngIf="gmailError">{{ gmailError }}</div>
-<div *ngIf="sdtError">{{ sdtError }}</div>
-<div *ngIf="gmailFormatError">{{ gmailFormatError }}</div>
-<div *ngIf="sdtFormatError">{{ sdtFormatError }}</div>
+          <!-- Display general error message -->
+      <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <!-- Display specific error messages -->
+      <div *ngIf="tenDangNhapError">{{ tenDangNhapError }}</div>
+      <div *ngIf="matKhauError">{{ matKhauError }}</div>
+      <div *ngIf="gmailError">{{ gmailError }}</div>
+      <div *ngIf="sdtError">{{ sdtError }}</div>
+      <div *ngIf="gmailFormatError">{{ gmailFormatError }}</div>
+      <div *ngIf="sdtFormatError">{{ sdtFormatError }}</div>
   </form>
 </div>

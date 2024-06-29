@@ -42,9 +42,11 @@ export interface TrangchuModel {
       img1_1_2:string;
       black1?: {
         quanty1: number;
+        color_black:string;
       }[];
       purple1?: {
         quanty1_2: number;
+        color_purple:string;
       }[];
     }[];
   }[];

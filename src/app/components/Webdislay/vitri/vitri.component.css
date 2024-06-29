@@ -1,0 +1,176 @@
+.dm{
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  gap: 2%; /* Khoảng cách giữa các phần */
+}
+p{
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}
+h6{
+  color:red}
+.dm > div {
+  flex: 1;
+}
+/* CSS */
+.container {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.form-container {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+select {
+  appearance: none; /* Remove default styles on some browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%; /* Set the width as needed */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+select:hover {
+  border-color: #007bff; /* Change border color on hover */
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow on focus */
+}
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: none; /* Remove the default border */
+  outline: none; /* Remove the outline when focused (optional, adjust as needed) */
+  transition: border-bottom 0.3s ease; /* Add a smooth transition effect */
+  border-bottom: 1px solid #000; /* Add an underline with a solid black color */
+  border-radius: 5px;
+}
+input:focus {
+  border-bottom: 2px solid #007bff; /* Change the underline color on focus */
+}
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Hiển thị thông tin chi tiết cho địa điểm và thời gian */
+.details {
+  margin-top: 10px;
+}
+/* Label styling */
+::ng-deep label[for="datepicker"] {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Input styling */
+::ng-deep #datepicker {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+::ng-deep #datepicker:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* ngx-bootstrap datepicker styling */
+::ng-deep .bs-datepicker-container {
+  font-family: 'Arial', sans-serif;
+}
+
+::ng-deep .bs-datepicker-head {
+  background-color: #3498db;
+  color: #fff;
+}
+
+::ng-deep .bs-datepicker-head .next, ::ng-deep .bs-datepicker-head .previous {
+  color: #fff;
+}
+
+::ng-deep .bs-datepicker-body table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  cursor: pointer;
+}
+
+::ng-deep .bs-datepicker-body table td.selected {
+  background-color: #3498db;
+  color: #fff;
+}
+
+::ng-deep .bs-datepicker-body table td:hover {
+  background-color: #f4f4f4;
+}
+
+::ng-deep .bs-datepicker-footer {
+  background-color: #3498db;
+  color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+::ng-deep .bs-datepicker-footer button {
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+::ng-deep .bs-datepicker-footer button:hover {
+  background-color: #2980b9;
+}
+
+::ng-deep .bs-datepicker-footer button.clear-button {
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+::ng-deep .bs-datepicker-footer button.clear-button:hover {
+  background-color: #f4f4f4;
+}

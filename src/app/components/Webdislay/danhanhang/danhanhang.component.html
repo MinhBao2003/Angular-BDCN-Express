@@ -1,0 +1,15 @@
+<ul class="nav-list">
+  <li><a [routerLink]="['/dathang']" routerLinkActive="router-link-active">Đặt hàng Thành Công</a></li>&nbsp;&nbsp;
+  <li><a [routerLink]="['/donhuy']" routerLinkActive="router-link-active">Đã hủy</a></li>&nbsp;&nbsp;
+  <li><a [routerLink]="['/danhanhang']" routerLinkActive="router-link-active">Đã Nhận hàng</a></li>
+</ul>
+<h4 style="text-align: center;">Tất cả đơn hàng đã giao</h4>
+<div *ngFor="let item of data" style="width: 80%;margin: auto;">
+
+  <h3>{{ item.name }}</h3>
+  <p>ROM: {{ item.rom }}</p>
+  <p>RAM: {{ item.ram }}</p>
+  <p>Price: {{ item.price }}</p>
+  <img src="{{item.img}}" alt="" style="width: 120px;height: 70px;">
+  <!-- Các trường dữ liệu khác -->
+</div>

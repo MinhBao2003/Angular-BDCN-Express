@@ -3,15 +3,20 @@
 <div>
   <h2>Đăng nhập</h2>
   <div>
-    <label for="username">Tên đăng nhập:</label>
+    <label for="username" style="margin-left: -38%;">Tên đăng nhập:</label>
     <input type="text" id="username" [(ngModel)]="username" placeholder="Nhập tên đăng nhập">
   </div>
   <div>
-    <label for="password">Mật khẩu:</label>
+    <label for="password" style="margin-left: -42%;">Mật khẩu:</label>
     <input type="password" id="password" [(ngModel)]="password" placeholder="Nhập mật khẩu">
   </div>
   <div>
     <button (click)="login()">Đăng nhập</button>
+  </div>
+  <hr style="color: black;">
+  <div>
+    <span>Bạn chưa có tài khoảng đăng ký ngay : </span>
+    <a [routerLink]="['/dangky']" routerLinkActive="router-link-active" >Đăng Ký</a>
   </div>
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}

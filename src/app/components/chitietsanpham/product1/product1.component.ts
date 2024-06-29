@@ -7,7 +7,7 @@ import { ProductinformationService } from 'src/app/server/productinformation/pro
 import { QnaService } from 'src/app/server/qna/qna.service';
 import { ReviewService } from 'src/app/server/review/review.service';
 import { TextService } from 'src/app/server/text/text.service';
-import { TrangchuService } from 'src/app/server/trangchu/trangchu.service';
+// import { TrangchuService } from 'src/app/server/trangchu/trangchu.service';
 import { StaffComment } from 'src/interface/Staff.model';
 import { CartItem } from 'src/interface/cart-item.model';
 import { ProductInformation } from 'src/interface/productinformation.model';
@@ -22,7 +22,8 @@ import { TrangchuModel } from 'src/interface/trangchu1.model';
   styleUrls: ['./product1.component.css']
 })
 export class Product1Component implements OnInit{
-  private firstCharacterColors: { [char: string]: string } = {};  trangchuData: any;// Use the actual type
+  private firstCharacterColors: { [char: string]: string } = {};
+  trangchuData: any;// Use the actual type
   productData: ProductInformation[] = [];
   color1:any;
   color2:any;
@@ -85,6 +86,7 @@ export class Product1Component implements OnInit{
     // Set the selected image when the component is initialized
     this.selectedImage1 = this.color2.img2;
   }
+
   getColorForFirstCharacter(username: string): string {
     const firstChar = username.charAt(0).toLowerCase();
 
@@ -140,11 +142,11 @@ export class Product1Component implements OnInit{
     this.getProductInformation();
     this.trangchuService.getData().subscribe((data: TrangchuModel[]) => {
       // Chỉ lấy dữ liệu từ id 11
-      const foundItem = data.find((item: TrangchuModel) => item.id === 11);
+      const foundItem = data.find((item: TrangchuModel) => item.id === 1);
       if (foundItem) {
         this.trangchuData = foundItem;
       } else {
-        console.error('Item with id 11 not found');
+        console.error('Item with id 1 not found');
       }
     });
     this.getProductInformation();
@@ -161,7 +163,7 @@ export class Product1Component implements OnInit{
       this.review.img = this.getImg();      // Implement getImg() method
       this.review.username = username;
     }
-   
+
   }
   loadStaffComments() {
     this.staffCommentService.getStaffComments().subscribe(
@@ -215,12 +217,12 @@ export class Product1Component implements OnInit{
     return this.staffComments.sort((a, b) => {
       const dateA = new Date(a.date + ' ' + a.clock).getTime();
       const dateB = new Date(b.date + ' ' + b.clock).getTime();
-      
+
       return dateA - dateB; // Sắp xếp tăng dần theo ngày giờ
     });
   }
   // Lấy ra ngày giờ sớm nhất
-  
+
   loadEarliestComment() {
     this.qnaService.getEarliestComment().subscribe(
       (qnas) => {
@@ -236,7 +238,7 @@ export class Product1Component implements OnInit{
     return this.earliestComments.sort((a, b) => {
       const dateA = new Date(a.date + ' ' + a.clock).getTime();
       const dateB = new Date(b.date + ' ' + b.clock).getTime();
-      
+
       return dateA - dateB; // Sắp xếp tăng dần theo ngày giờ
     });
   }
@@ -256,22 +258,22 @@ export class Product1Component implements OnInit{
       this.commentError = 'Comment cannot be empty';
       return; // Stop the process if the comment is empty
     }
-  
+
     // Reset the comment error if it was previously set
     this.commentError = '';
-  
+
     // Set the current date and time
     const currentDate = new Date();
     this.review.date = currentDate.toISOString().slice(0, 10);
     this.review.clock = currentDate.toTimeString().slice(0, 8);
-  
+
     this.reviewService.saveReview(this.review).subscribe(
       () => {
         console.log('Review saved successfully');
-  
+
         // Trigger a click event on the star rating
         this.triggerStarRatingClick();
-  
+
         this.resetReview();
       },
       (error) => {
@@ -284,8 +286,8 @@ export class Product1Component implements OnInit{
     // Sắp xếp theo số sao giảm dần, sau đó theo ngày giờ tăng dần
     return this.customerReviews.sort((a, b) => {
       if (b.star !== a.star) {
-        
-  
+
+
     return b.star - a.star; // Sắp xếp giảm dần theo số sao
           } else {
             // Sắp xếp tăng dần theo ngày giờ
@@ -374,51 +376,109 @@ private triggerStarRatingClick() {
       console.log(this.productData); // Dữ liệu từ API
     });
   }
-  addToCart(quantity?: number): void {
-    if (this.trangchuData) {
-      const currentDate = new Date();
+  getColorBlack(): any[] {
+    if (this.trangchuData && this.trangchuData.varchar && this.trangchuData.varchar.length > 0) {
+      const firstVarcharItem = this.trangchuData.varchar[0];
 
-      // Increment the cartId to create a unique identifier
-      const cartId = 'id_' + Date.now(); // Example: id_1635346147103
-
-      const cartItem: CartItem = {
-        id: cartId,
-        userId: this.loggedInUser.id,
-        id_product: this.trangchuData.id, // Make sure this is a number
-        username: this.loggedInUser.username,
-        permission: this.loggedInUser.permission,
-        role: this.loggedInUser.role,
-        name: this.trangchuData.name,
-        price: this.trangchuData.discountedPrice,
-        img: this.trangchuData.img,
-        date: currentDate.toISOString().slice(0, 10),
-        clock: currentDate.toTimeString().slice(0, 8),
-        quantity: quantity || 1,
-      };
-
-      // Check if the id already exists in the cart
-      const existingCartItemIndex = this.cartService.cartItems.findIndex(
-        (item) => item.id === cartId
-      );
-
-      if (existingCartItemIndex !== -1) {
-        // If id already exists, increment the quantity
-        this.cartService.cartItems[existingCartItemIndex].quantity += quantity || 1;
-      } else {
-        // If id does not exist, add the new item to the cart
-        this.cartService.cartItems.push(cartItem);
-      }
-
-      this.cartService.addToCart(cartItem).subscribe(
-        (response) => {
-          console.log('Item added to cart:', response);
-          // You may want to handle success, update UI, etc.
-        },
-        (error) => {
-          console.error('Error adding item to cart:', error);
-          // Handle error, show a message to the user, etc.
+      if (firstVarcharItem.color1 && firstVarcharItem.color1.length > 0) {
+        const colorBlackArray = firstVarcharItem.color1[0]?.black1;
+        if (colorBlackArray && colorBlackArray.length > 0) {
+          return colorBlackArray;
         }
-      );
+      }
+    }
+
+    return []; // Return an empty array if the data is not available
+  }
+
+  getColorPurple(): any[] {
+    if (this.trangchuData && this.trangchuData.varchar && this.trangchuData.varchar.length > 0) {
+      const firstVarcharItem = this.trangchuData.varchar[0];
+      if (firstVarcharItem.color1 && firstVarcharItem.color1.length > 0) {
+        const colorPurpleArray = firstVarcharItem.color1[0]?.purple1;
+        if (colorPurpleArray && colorPurpleArray.length > 0) {
+          return colorPurpleArray;
+        }
+      }
+    }
+
+    return []; // Return an empty array if the data is not available
+  }
+  cart: CartItem[] = [];
+  addToCart() {
+    if (this.trangchuData && this.trangchuData.varchar && this.trangchuData.varchar.length > 0) {
+      const firstVarcharItem = this.trangchuData.varchar[0];
+
+      const currentDate = new Date();
+      const formattedDate = currentDate.toISOString().slice(0, 10);
+      const formattedTime = currentDate.toTimeString().slice(0, 8);
+
+      const numericPrice = parseFloat(firstVarcharItem.price1.replace(/[^\d.]/g, '')); // Lấy giá tiền dưới dạng số
+
+      // Giới hạn số lượng chữ số sau dấu thập phân thành 2 chữ số
+    // const money = parseFloat(numericPrice.toFixed(2));
+
+      // Kiểm tra xem giá tiền đã được xử lý thành số hợp lệ chưa
+      if (!isNaN(numericPrice)) {
+        // Kiểm tra nếu số lượng sản phẩm đã có trong giỏ hàng
+        const existingItemIndex = this.cart.findIndex(item => item.name === this.trangchuData.name && item.rom === firstVarcharItem.rom1);
+        if (existingItemIndex !== -1) {
+          // Sản phẩm đã có trong giỏ hàng, tăng số lượng
+          this.cart[existingItemIndex].quantity++;
+          console.log('Quantity updated for item in cart:', this.cart[existingItemIndex]);
+          // Cập nhật giỏ hàng trên máy chủ
+          this.updateCartItemOnServer(this.cart[existingItemIndex]);
+        } else {
+          // Sản phẩm chưa có trong giỏ hàng, thêm một mục mới
+          const cartItem: CartItem = {
+            ram: '8GB',
+            rom: firstVarcharItem?.rom1 || '',
+            id: this.cartService.getNextItemId(),
+            color: '', // Đặt màu đã chọn (có thể bạn muốn sửa đổi điều này)
+            name: this.trangchuData?.name || '',
+            price: firstVarcharItem?.price1 || '', // Lưu giá tiền dưới dạng chuỗi
+            money: numericPrice, // Lưu giá tiền đã xử lý thành số
+            img: this.selectedImage || '',
+            date: formattedDate,
+            clock: formattedTime,
+            quantity: 1
+          };
+
+          console.log('New item added to cart:', cartItem);
+          // Thêm mục vào mảng giỏ hàng
+          this.cart.push(cartItem);
+          // Thêm mục giỏ hàng vào máy chủ
+          this.addCartItemToServer(cartItem);
+        }
+      } else {
+        console.error('Invalid price:', firstVarcharItem.price1);
+      }
     }
   }
+
+  // Thêm một phương thức riêng để cập nhật mục giỏ hàng trên máy chủ
+  updateCartItemOnServer(cartItem: CartItem) {
+    this.cartService.updateCart(cartItem).subscribe(
+      (response) => {
+        console.log('Cart updated successfully:', response);
+      },
+      (error) => {
+        console.error('Error updating cart:', error);
+      }
+    );
+  }
+
+  // Thêm một phương thức riêng để thêm mục giỏ hàng vào máy chủ
+  addCartItemToServer(cartItem: CartItem) {
+    this.cartService.addToCart(cartItem).subscribe(
+      (response) => {
+        console.log('Item added to cart successfully:', response);
+      },
+      (error) => {
+        console.error('Error adding item to cart:', error);
+      }
+    );
+  }
+
+
 }

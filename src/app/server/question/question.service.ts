@@ -5,14 +5,15 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class Product2Service {
+export class QuestionService {
 
-  private apiUrl = 'http://localhost:3000/Qan';
+  private apiUrl = 'http://localhost:3000/question';
 
   constructor(private http: HttpClient) {}
 
-  getCommentById(commentId: string): Observable<any> {
-    const url = `${this.apiUrl}/${commentId}`;
+  // Function to get data by ID
+  getDataById(id: string): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
     return this.http.get<any>(url);
   }
 }

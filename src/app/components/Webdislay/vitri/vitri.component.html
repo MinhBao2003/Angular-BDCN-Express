@@ -1,11 +1,50 @@
-<!-- my-component.component.html -->
-<div *ngIf="productData && productData.length > 0">
-    <h2>{{ productData[0].new }}</h2>
-    <p>Guarantee: {{ productData[0].guarantee }}</p>
-    <p>VAT: {{ productData[0].vat }}</p>
-    <p>SDT1: {{ productData[0].sdt1 }}</p>
-    <p>MAP1: {{ productData[0].map1 }}</p>
-    <p>SDT2: {{ productData[0].sdt2 }}</p>
-    <p>MAP2: {{ productData[0].map2 }}</p>
+<div class="dm">
+  <div >
+    <h6>Đặng Văn Bi, Thủ Đức, Thành phố Hồ Chí Minh</h6>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.572686138041!2d106.75978307481904!3d10.843976957944532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527a4690d0025%3A0x8b8f9b8f507e6b22!2zxJDhurduZyBWxINuIEJpLCBUaOG7pyDEkOG7qWMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1702235378110!5m2!1svi!2s" width="100%" height="450" style="border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
-  
+  <div>
+    <h6>Định Quán, Đồng Nai</h6>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250476.18729811953!2d107.12006290094956!3d11.21052505499425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31748a9b4f56dd05%3A0x726e52d4550d42a2!2zxJDhu4tuaCBRdcOhbiwgxJDhu5NuZyBOYWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1702235530687!5m2!1svi!2s" width="100%" height="450" style="border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+<div class="container">
+  <div class="form-container">
+    <p>Đặt lịch hẹn tại của hàng</p>
+    <label for="">Họ tên</label>
+    <input type="text" id="hoten" [(ngModel)]="hoten" name="hoten" required placeholder="Nhập họ tên"><br>
+    <label for="">Số Điện Thoại</label>
+    <input type="text" id="sdt" [(ngModel)]="sdt" name="sdt" required placeholder=" Nhập số điện thoại"><br>
+    <label for="">Email</label>
+    <input type="text" id="email" [(ngModel)]="email" name="email" required placeholder="Nhập email"><br>
+    <label for="">Chọn địa chỉ</label>
+    <!-- Tại nơi bạn muốn hiển thị dropdown trong template của bạn -->
+    <select id="selectedLocation" [(ngModel)]="selectedLocation" (change)="onLocationChange()" name="selectedLocation" required>
+      <option value="" disabled selected>Chọn địa chỉ</option>
+      <option value="Định Quán, Đồng Nai">Định Quán, Đồng Nai</option>
+      <option value="Đặng Văn Bi, Thủ Đức, Thành phố Hồ Chí Minh">Đặng Văn Bi, Thủ Đức, Thành phố Hồ Chí Minh</option>
+    </select><br>
+    <label for="datepicker" class="datepicker-label">Ngày</label>
+    <input type="text" id="ngay" [(ngModel)]="ngay" name="ngay" required placeholder="Nhập ngày hẹn"/><br>
+    <label for="">chọn khung giờ</label>
+        <!-- Tại nơi bạn muốn hiển thị dropdown trong template của bạn -->
+    <select id="selectedTime" [(ngModel)]="selectedTime" (change)="onTimeChange()" name="selectedTime" required>
+      <option value="" disabled selected>Chọn khung giờ</option>
+      <option value="Sáng (8:00 - 11:30)">Sáng (8:00 - 11:30)</option>
+      <option value="Chiều (14:00 - 17:30)">Chiều (14:00 - 17:30)</option>
+      <option value="Tối (19:00 - 22:30)">Tối (19:00 - 22:30)</option>
+    </select><br>
+    <button (click)="saveAppointment()">đặt lịch hẹn</button>
+    <div *ngIf="hotenError">{{ hotenError }}</div>
+    <div *ngIf="gmailError">{{ gmailError }}</div>
+    <div *ngIf="sdtError">{{ sdtError }}</div>
+    <div *ngIf="gmailFormatError">{{ gmailFormatError }}</div>
+    <div *ngIf="sdtFormatError">{{ sdtFormatError }}</div>
+    <div *ngIf="selectedLocationError">{{ selectedLocationError }}</div>
+    <div *ngIf="selectedTimeError">{{ selectedTimeError }}</div>
+    <div *ngIf="ngayError">{{ ngayError }}</div>
+  </div>
+</div>
+<hr style="color: black;">
+<app-lienhe></app-lienhe>
+

@@ -70,21 +70,21 @@
 .left-image {
   position: fixed;
   left: 4.5px; /* Margin bên trái */
-  top: 50%; /* Giữ ảnh ở giữa theo chiều cao */
+  top: 51%; /* Giữ ảnh ở giữa theo chiều cao */
   transform: translateY(-50%);
-  width: 150px;
+  width: 9.5%;
   height: 470px;
-  border: 1px solid #ccc; /* Thêm đường viền để nhìn thấy kích thước ảnh */
+  /* border: 1px solid #ccc; Thêm đường viền để nhìn thấy kích thước ảnh */
 }
 
 .right-image {
   position: fixed;
   right: 4.5px; /* Margin bên phải */
-  top: 50%; /* Giữ ảnh ở giữa theo chiều cao */
+  top: 51%; /* Giữ ảnh ở giữa theo chiều cao */
   transform: translateY(-50%);
-  width: 150px;
+  width: 9.5%;
   height: 470px;
-  border: 1px solid #ccc; /* Thêm đường viền để nhìn thấy kích thước ảnh */
+  /* border: 1px solid #ccc; Thêm đường viền để nhìn thấy kích thước ảnh */
 }
 
 /* Khi màn hình có độ rộng là 430px */

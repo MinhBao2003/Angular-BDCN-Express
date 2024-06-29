@@ -5,7 +5,7 @@ img{
 }
 /*căn giữa thanh lướt*/
 .d{
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
   max-width: 80%;
   margin-left: 10%;
 }
@@ -36,10 +36,11 @@ img{
 .c1{
   font-size: 16px;
   font-weight: bold;
+  color: red;
 }
 .name{
   font-weight: bold;
-  color: rgb(223, 47, 47);
+  color: rgb(16, 16, 16);
   height: 85px;
   font-size: 14px;
 }
@@ -67,13 +68,17 @@ img{
   max-width: 100%; /* Ensure the text doesn't exceed the width of the div */
   white-space: nowrap; /* Prevent text from wrapping */
 }
-.div3{
-  background-color: rgb(138 233 202 / 61%);;
+.div3 {
+  /* background-image: url('https://i.pinimg.com/originals/48/cc/c5/48ccc5e….jpg'); */
+  background-size: cover; /* Đảm bảo hình ảnh đầy đủ kích thước */
+  background-position: center; /* Đặt hình ảnh ở giữa */
   height: 450px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Hiệu ứng đường viền mờ dần */
   margin-top: 7px;
+  background-color: rgb(144, 211, 241);
 }
+
 .p1{
   /* margin-top: -130px; */
 
@@ -88,8 +93,11 @@ img{
 }
 .hot-text {
   text-decoration: line-through; /* Thêm gạch ngang */
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
 }
-.product-list-container {
+.product-list-p {
   max-width: 100%;
   margin: 20px auto;
   position: relative;
@@ -115,8 +123,8 @@ a {
   margin: 5px;
   box-sizing: border-box;
   border-radius: 5px;
-  background-color: aliceblue;
-  border: 2px solid black;
+  background-color: #fff;
+  border: 1px solid #ddd;
   width: 233px;
   height: 350.2px;
 }
@@ -144,11 +152,13 @@ a {
   color: #666666;
   cursor: not-allowed;
 }
+
 .q1{
   width: 200px;
 }
 .phonebt{
   margin-top: 1%;
+  height: 400px;
 }
 /* Thiết lập kích thước chung cho phone */
 .phone {
@@ -160,12 +170,14 @@ a {
 .phone1 {
   flex: 0 0 30%; /* flex-grow: 0; flex-shrink: 0; flex-basis: 30%; */
   overflow: hidden; /* Ẩn nội dung bị tràn ra khỏi phần này */
+  font-size: 22px;
 }
 /* Style cho h6 */
 .phone1 h4 {
   white-space: nowrap; /* Ngăn chữ xuống dòng */
   overflow: hidden; /* Ẩn nội dung bị tràn ra khỏi h6 */
   text-overflow: ellipsis; /* Hiển thị dấu chấm (...) nếu nội dung quá dài */
+  font-size: 22px;
 }
 /* Phần phone2 chiếm 70% */
 .phone2 {
@@ -186,35 +198,45 @@ a {
   margin-right: auto; /* Căn chỉnh về phía cuối phần */
 }
 .sphone{
-  margin-left: 40%;
+  margin-left: 38%;
+}
+a{
+  margin: 3px;
 }
 .ap{
   width: 7%;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
 .ss{
   width: 10%;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
 .xm{
   width: 8%;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
 .rm{
   width: 8%;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
 .nk{
   width: 7%;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
 .as{
   width: 6%;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
 .xtc{
   width: 11%;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
 @keyframes blink {
   0% {
@@ -268,7 +290,7 @@ a {
   text-align: center;
   align-items: center;
   /* margin-left: 200px; */
-  margin-top: -70px;
+  margin-top: -53px;
 }
 
 @keyframes lightning {
@@ -296,6 +318,241 @@ a {
   background-size: contain;
   animation: lightning 3s infinite;
   width: 30px;
+}
+/* phone-list.component.css */
+.phone {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center;
+}
+
+.phone-card {
+  width: 19.5%; /* Set the width to 20% for five items in a row */
+  margin: 0.2%;
+  height: 350px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.phonepr {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center;
+  margin-top: 3%;
+}
+.phone-cardpr {
+  width: 19.5%; /* Set the width to 20% for five items in a row */
+  margin: 0.2%;
+  height: 350px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.imgp {
+  width: 70%; /* Make the image take the full width of its container */
+  height: 150px; /* Maintain aspect ratio */
+  /* text-align: center; */
+}
+
+.navigation-buttons1 {
+  transform: translateY(-400%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.navigation-buttonspr {
+  transform: translateY(-600%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-button {
+  padding: 8px;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: #1eb71578;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: bottom 0.5s ease;
+}
+.navigation-buttonpr {
+  padding: 8px;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: rgb(234, 234, 175);
+  color: red;
+  /* border: 1px solid black; */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: bottom 0.5s ease;
+}
+/* laptop */
+.slaptop{
+  margin-left: 57.3%;
+}
+.mb{
+  width: 10%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.ac{
+  width: 6%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.hp{
+  width: 6%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+/* laptop-list.component.css */
+.laptop {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center;
+}
+
+.laptop-item {
+  width: 19.5%; /* Set the width to 20% for five items in a row */
+  margin: 0.2%;
+  height: 350px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+
+.controls {
+  transform: translateY(-400%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation {
+  padding: 8px;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: #1eb71578;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: bottom 0.5s ease;
+}
+/* tivi */
+.cqq{
+  width: 9%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.tvxm{
+  width: 8%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.tvss{
+  width: 10%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.stivi{
+  margin-left: 59.1%;
+}
+/* tivi-list.component.css */
+.tivi {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center;
+}
+
+.tivi-item {
+  width: 19.5%; /* Set the width to 20% for five items in a row */
+  margin: 0.2%;
+  height: 350px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+
+.controls1 {
+  transform: translateY(-400%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation1 {
+  padding: 8px;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: #1eb71578;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: bottom 0.5s ease;
+}
+/* headphone */
+.sheadphone{
+  margin-left: 53.8%;
+}
+.tnb{
+  width: 18%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.tncd{
+  width: 15%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+/* clock */
+.sclock{
+  margin-left: 63.7%;
+}
+.dha{
+  width: 13%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.dhss{
+  width: 10%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 @media screen and (max-width: 430px) {}
 @media screen and (min-width: 1024px) and (max-width: 1024px) {

@@ -1,0 +1,147 @@
+<div class="xtc">
+  <div class="dt">
+    <div class="child dm1">
+      <!-- Nội dung của div con 1 -->
+    </div>
+    <div class="child dm2">
+      <!-- Nội dung của div con 2 -->
+    </div>
+  </div>
+  <div style="padding: 10px;">
+    <a [routerLink]="['/apple']">
+      <button>
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:50/q:30/plain/https://cellphones.com.vn/media/tmp/catalog/product/f/r/frame_59.png" alt="" class="img1">
+      </button>
+    </a>
+    <a [routerLink]="['/samsung']">
+      <button>
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:50/q:30/plain/https://cellphones.com.vn/media/tmp/catalog/product/f/r/frame_60.png" alt="">
+      </button>
+    </a>
+    <a [routerLink]="['/xiaomi']">
+      <button>
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:50/q:30/plain/https://cellphones.com.vn/media/tmp/catalog/product/f/r/frame_61.png" alt="">
+      </button>
+    </a>
+    <a [routerLink]="['/realme']">
+      <button>
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:50/q:30/plain/https://cellphones.com.vn/media/tmp/catalog/product/f/r/frame_63.png" alt="">
+      </button>
+    </a>
+    <a [routerLink]="['/nokia']">
+      <button>
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:50/q:30/plain/https://cellphones.com.vn/media/tmp/catalog/product/f/r/frame_37_1.png" alt="">
+      </button>
+    </a>
+    <a [routerLink]="['/asus']">
+      <button>
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:50/q:30/plain/https://cellphones.com.vn/media/tmp/catalog/product/f/r/frame_67.png" alt="">
+      </button>
+    </a>
+  </div>
+  <div class="db">
+    <p class="p12">Chọn Theo nhu cầu</p>
+    <div class="b" id="ram" name="ram" [(ngModel)]="selectedRam" (click)="refreshPage()" (click)="filterByRam(12)">
+      <span class="s1">Chơi Game</span>
+    </div>
+    <div class="d" id="rom" name="rom" [(ngModel)]="selectedRom" (click)="refreshPage()" (click)="filterByRom(256)">
+      <span class="s1">Dung Lương lớn</span>
+    </div>
+  </div>
+  <div>
+    <p class="p12">Chọn theo tiêu chí</p>
+    <select id="ram" name="ram" [(ngModel)]="selectedRam" (click)="refreshPage()" (change)="onRamSelect()">
+      <option value="" disabled selected>Dung lượng Ram</option>
+      <option value="3GB">RAM 3GB</option>
+      <option value="4GB">RAM 4GB</option>
+      <option value="6GB">RAM 6GB</option>
+      <option value="8GB">RAM 8GB</option>
+      <option value="12GB">RAM 12GB</option>
+      <option value="16GB">RAM 16GB</option>
+    </select>
+    <select id="rom" name="rom" [(ngModel)]="selectedRom" (click)="refreshPage()" (change)="onRomSelect()">
+      <option value="" disabled selected>Bộ nhớ trong</option>
+      <option value="32GB">ROM 32GB</option>
+      <option value="64GB">ROM 64GB</option>
+      <option value="128GB">ROM 128GB</option>
+      <option value="256GB">ROM 256GB</option>
+      <option value="512GB">ROM 512GB</option>
+      <option value="1TB">ROM 1TB</option>
+    </select>
+    <select id="screenSize" name="screenSize" [(ngModel)]="selectedInches" (click)="refreshPage()" (change)="onInchesSelect()">
+      <option value="" disabled selected>Khích thước màn hình</option>
+      <option value="6.36 inches">6.36 inches</option>
+      <option value="6.4 inches">6.4 inches</option>
+      <option value="6.5 inches">6.5 inches</option>
+      <option value="6.51 inches">6.51 inches</option>
+      <option value="6.67 inches">6.67 inches</option>
+      <option value="6.7 inches">6.7 inches</option>
+      <option value="6.72 inches">6.72 inches</option>
+      <option value="6.73 inches">6.73 inches</option>
+      <option value="6.78 inches">6.78 inches</option>
+      <option value="6.8 inches">6.8 inches</option>
+      <option value="7.6 inches">7.6 inches</option>
+    </select>
+  </div>
+  <div>
+    <p class="p12">Sắp Xếp theo</p>
+    <button (click)="sortByPriceDescending()" [class.priceDescending]="isPriceDescendingClicked" class="b1">Giá Cao - Thấp</button>
+    <button (click)="sortByPriceAscending()" [class.priceAscending]="isPriceAscendingClicked" class="b1">Giá Thấp - Cao</button>
+    <button (click)="sortByDiscountDescending()" [class.discountDescending]="isDiscountDescendingClicked" class="b1">Khuyến Mãi hot</button>
+  </div>
+  <div class="phone" *ngIf="phones.length > 0">
+    <div *ngFor="let phone of phones" class="phone-card">
+      <a [routerLink]="['/', phone.name, phone.id]">
+        <div style="text-align: center;"><img [src]="phone.img" alt="{{ phone.prname }}" class="imgp"></div>
+        <div style="height: 48px;font-weight: bold;color: black;font-size: 14px;"><p>{{ phone.prname }}</p></div>
+        <div>
+          <span class="s2">{{phone.screenSize}}</span><span class="s2">{{phone.ram}}</span><span class="s2">{{phone.rom}}</span>
+        </div>
+        <div style="margin-top: 12%;font-size: 14px;">
+          <p style="color: red;font-weight: bold;">{{ phone.price }}</p>
+          <p style="color: black;font-weight: bold;"><s>{{ phone.discountedPrice }}</s></p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="phones.length === 0">
+    <p>Sản Phẩm Đã Hết Hàng.</p>
+  </div>
+
+  <div class="d1">
+    <div *ngIf="questionData">
+      <div><p class="p2">Câu hỏi thường gặp</p></div>
+      <p (click)="toggleSection('section1')" class="p1">{{questionData.note }}<em >&gt;</em> </p>
+      <div *ngIf="isSectionOpen('section1')" class="section-content">
+        <p class="papple">{{questionData.note_1}}</p>
+        <p class="papple">{{questionData.note_1_2}}</p>
+        <p class="papple">{{questionData.note_1_3}}</p>
+      </div>
+
+      <p (click)="toggleSection('section2')"  class="p1">{{questionData.note_3 }}<em >&gt;</em> </p>
+      <div *ngIf="isSectionOpen('section2')" class="section-content">
+        <p>{{questionData.note_3_}}</p>
+        <p>{{questionData.note_3_1}}</p>
+        <p>{{questionData.note_3_2}}</p>
+        <p>{{questionData.note_3_3}}</p>
+      </div>
+
+      <p (click)="toggleSection('section3')"  class="p1">{{questionData.note_4 }}<em >&gt;</em> </p>
+      <div *ngIf="isSectionOpen('section3')" class="section-content">
+        <p>{{questionData.note_4_1}}</p>
+        <p>{{questionData.note_4_2}}</p>
+        <p>{{questionData.note_4_3}}</p>
+        <p>{{questionData.note_4_4}}</p>
+        <p>{{questionData.note_4_5}}</p>
+      </div>
+
+
+  </div>
+
+  <div *ngIf="!questionData">
+    <p>Loading...</p>
+  </div>
+
+</div>
+<hr style="color: black;">
+<app-lienhe></app-lienhe>

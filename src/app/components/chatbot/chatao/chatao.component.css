@@ -4,12 +4,13 @@
   bottom: 0;
   right: 0;
   width: 400px;
-  height: 40px; /* Chiều cao ban đầu khi đóng */
+  height: 29px; /* Chiều cao ban đầu khi đóng */
   border: 1px solid #ccc;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   transition: height 0.3s ease;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  background: linear-gradient(to right, #a5e2aab5, #e2afa5b5);
 }
 
 .open {
@@ -28,5 +29,9 @@
   margin-right: 10px;
   cursor: pointer;
 }
-
+textarea{
+  width: 100%;
+  /* height: 26px; */
+  border-radius: 7px;
+}
 /* Các phần còn lại của CSS */

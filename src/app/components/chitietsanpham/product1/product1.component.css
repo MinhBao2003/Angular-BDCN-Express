@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding: 0;
   width: 60%;
-  margin-top: -4.5%;
+  margin-top: 0.7%;
 }
 .left {
   width: 49.8%;
@@ -41,7 +41,7 @@
 .right-div1 {
   width: 39.8%;
   height: 185px;
-  margin-top: -4%;
+  margin-top: -9.5%;
 }
 .container {
   margin-top: 0.3%;
@@ -63,9 +63,9 @@
   text-align: center;
 }
 
-.right-div {
+.right-div{
   width: 39.8%;
-  height: 360px;
+  height: 280px;
   box-sizing: border-box; /* Viền sẽ không tăng kích thước của box */
   border: 2px solid #ccc; /*Thêm viền 2px màu xám (#ccc)*/
   border-radius: 5px;
@@ -104,7 +104,7 @@ a{
 .phd{
   font-weight: bold;
   /* text-align: center; */
-  margin-top: -15px;
+  /* margin-top: -15px; */
 }
 .v1{
   margin-left: -20px;
@@ -125,8 +125,8 @@ a{
 .d2 {
   background-color: white;
   max-width: 40%;
-  margin-left: 60.5%;
-  margin-top: -14.5%;
+  margin-left: 60.2%;
+  margin-top: -44.2%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   max-height: 700px
@@ -134,35 +134,37 @@ a{
 
 .b1{
   margin-left: 4%;
-  width: 31%;
-  height: 70px;
+  width: 24%;
+  height: 43px;
   background-color: white;
 }
 .b3{
   margin-left: 4%;
-  width: 31%;
+  width: 24%;
+  height: 101px;
   background-color: white;
 }
 .b4{
   margin-left: 4%;
-  width: 31%;
+  width: 24%;
+  height: 101px;
   background-color: white;
 }
 .b2{
   margin-left: 4%;
-  width: 31%;
-  height: 70px;
+  width: 24%;
+  height: 43px;
   background-color: white;
 }
 .mau{
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 10px;
   margin-left: 5px;
   font-weight: bold;
 
 }
 .loai{
-  font-size: 18px;
+  font-size: 16px;
   margin-top: -5px;
   margin-left: 5px;
   font-weight: bold;
@@ -180,9 +182,11 @@ button{
 }
 .bvt1{
   background-color: white;
+  border: 1px solid #ccc;
 }
 .bvt2{
   background-color: white;
+  border: 1px solid #ccc;
 }
 .thanhtoan1{
   margin-top: -1%;
@@ -278,7 +282,7 @@ h1{
 }
 .g1{
   margin-top: -10px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .hi{
   display: flex;
@@ -429,20 +433,37 @@ h1{
   color: blue; /* Màu xanh */
 }
 .dd{
-  width: 700px;
-  height: 250px;
-  background-color: aliceblue;
+  width: 59.75%;
+  height: 312px;
+  background-color: #fff;
   border-radius: 5px;
-  margin-left: 5px;
-  margin-top: 10px;
+  margin-top: 3px;
+  margin-left: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .ch{
-  width: 700px;
-  /* height: 200px; */
-  background-color: aliceblue;
+  width: 59.75%;
+  background-color: #fff;
   border-radius: 5px;
-  margin-left: 5px;
-  margin-top: 30px;
+  margin-top: 10.5%;
+  /* box-shadow: 10px 10px 10px #888888; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  margin-left: 1px;
+}
+.pch{
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+.pd{
+  margin-top: -0.5%;
+  background: aliceblue;
+}
+em{
+  float: right;
+  margin-right: 2%;
 }
 .img1 {
   max-width: 300px;
@@ -497,8 +518,10 @@ img:hover {
   width: 100%;
 }
 .dg{
-  margin-top:-19%;
-  width: 60%;
+  margin-top:0.2%;
+  margin-left: 1px;
+  width: 59.75%;
+  padding: 5px;
   /* height: 800px; */
   border-radius: 5px;
   background: white;
@@ -513,11 +536,13 @@ img:hover {
 }
 
 .hd{
-  width: 60%;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin-top: -19px;
+  margin: 1px;
+  width: 59.75%;
+  padding: 5px;
 }
 
 /* product1.component.css */
@@ -669,11 +694,12 @@ select,
 .ddg2{
   max-width: 40%;
   margin: 25px;
-  height: 259px;
+  height: 269px;
   background: aliceblue;
   margin-top: -268px;
   margin-left: 375px;
   border-radius: 5px;
+  padding: 1px;
 }
 .bdg1{
   margin-top: 5px;
@@ -795,6 +821,7 @@ select,
 .dhd1{
   margin: 25px;
 }
+
 @media screen and (max-width: 430px) {
 }
 @media screen and (min-width: 1024px) and (max-width: 1024px) {

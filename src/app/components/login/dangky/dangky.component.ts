@@ -52,6 +52,12 @@ export class DangkyComponent {
       return;
     }
 
+    const customEmailRegex = /^[a-zA-Z0-9+]+@gmail\.com$/;
+    if (!customEmailRegex.test(this.gmail)) {
+      this.gmailError = 'Định dạng email không đúng';
+      return;
+    }
+
     if (this.sdt === null) {
       this.sdtError = 'Số điện thoại không được để trống';
       return;
@@ -67,11 +73,11 @@ export class DangkyComponent {
       return;
     }
     // Validate Gmail format
-const gmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-if (!gmailRegex.test(this.gmail)) {
-  this.gmailFormatError = 'Định dạng email không đúng';
-  return;
-}
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!gmailRegex.test(this.gmail)) {
+      this.gmailFormatError = 'Định dạng email không đúng';
+      return;
+    }
 
 
   // Validate phone number format

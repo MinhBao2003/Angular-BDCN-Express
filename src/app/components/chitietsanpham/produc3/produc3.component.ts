@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Product2Service } from 'src/app/server/product2.service';
 
 @Component({
   selector: 'app-produc3',
@@ -7,5 +6,5 @@ import { Product2Service } from 'src/app/server/product2.service';
   styleUrls: ['./produc3.component.css']
 })
 export class Produc3Component {
- 
+
 }

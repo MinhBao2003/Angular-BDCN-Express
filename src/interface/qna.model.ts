@@ -7,4 +7,5 @@ export interface QnA {
   comment: string;
   date: string;
   clock: string;
+
 }

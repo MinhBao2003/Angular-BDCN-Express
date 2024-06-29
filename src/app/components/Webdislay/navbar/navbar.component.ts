@@ -2,6 +2,7 @@ import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 import { PhanQuyenloginService } from 'src/app/server/PhanQuyen/phan-quyenlogin.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CartService } from 'src/app/server/cart/cart.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,11 +11,13 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class NavbarComponent implements OnInit{
   loggedInUser: any;
+  maxItemId: number = 0;
 
-  constructor(private breakpointObserver: BreakpointObserver,private authService: PhanQuyenloginService, private router: Router) {}
+  constructor(private breakpointObserver: BreakpointObserver,private authService: PhanQuyenloginService,
+     private router: Router,private cartService: CartService) {}
 
   ngOnInit(): void {
-    // Fetch the logged-in user information when the component is created
+    // Lấy thông tin người dùng đã đăng nhập khi thành phần được tạo
     this.loggedInUser = this.authService.getLoggedInUser();
     this.breakpointObserver.observe([
       Breakpoints.Handset,
@@ -24,22 +27,24 @@ export class NavbarComponent implements OnInit{
         // Hiển thị giao diện tương ứng với màn hình di động hoặc máy tính bảng
       }
     });
+    this.cartService.updateCartItems();
+    this.cartService.getCartItems().subscribe((items) => {
+      this.maxItemId = this.cartService.getMaxItemId();
+    });
   }
-
-  // Add this method to check if the user is logged in
+  // kiểm tra xem người dùng đã đăng nhập chưa
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
 
-  // Add this method to get the username
+  // lấy tên người dùng
   getUsername(): string {
     return this.authService.getUsername();
   }
 
-  // Add this method to handle logout
+  // xử lý đăng xuất
   logout() {
-    // Your logout logic goes here
-    // For example, clear the user data and navigate to the login page
+    // xóa dữ liệu người dùng và điều hướng đến trang đăng nhập
     this.authService.setLoggedInUser(null);
     this.router.navigate(['/dangnhap']);
   }

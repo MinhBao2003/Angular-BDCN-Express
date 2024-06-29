@@ -1,0 +1,68 @@
+<div style="width: 70%;margin: auto;">
+    <!-- example.component.html -->
+
+    <!-- <div *ngIf="orders.length > 0" class="orders-container"> -->
+    <div class="orders-container">
+      <ul class="nav-list">
+        <li><a [routerLink]="['/dathang']" routerLinkActive="router-link-active">Đặt hàng Thành Công</a></li>&nbsp;&nbsp;
+        <li><a [routerLink]="['/donhuy']" routerLinkActive="router-link-active">Đã hủy</a></li>&nbsp;&nbsp;
+        <li><a [routerLink]="['/danhanhang']" routerLinkActive="router-link-active">Đã Nhận hàng</a></li>
+      </ul>
+      <router-outlet></router-outlet>
+        <h2 style="text-align: center;">Đặt hàng Thành Công</h2>
+        <div *ngFor="let order of orders" style="text-align: center;">
+          <div *ngIf="order.id === 1" >
+            <p>Tên Khách hàng: {{ order.namekhach }}</p>
+            <p>Số điện thoại: {{ order.sdt }}</p>
+            <p>Email: {{ order.email }}</p>
+            <p>Số lần bạn đã hàng: {{ order.id }}</p>
+          </div>
+        </div>
+
+      <table *ngIf="orders.length > 0" class="orders-table" style="width: 95%;margin: auto;">
+        <thead>
+          <tr>
+            <!-- <th>Tên khách hàng</th>
+            <th>Sđt</th>
+            <th>Email</th> -->
+            <th>Tên sản phẩm</th>
+            <th>Ảnh minh họa</th>
+            <th>Giá</th>
+            <th>Ram:</th>
+            <th>Rom:</th>
+            <th>Ghi Chú</th>
+            <th>Ngày</th>
+            <th>Giờ</th>
+            <th>Hủy Trong 3h</th>
+            <th></th>
+            <!-- Add more table headers as needed for other order details -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <!-- <td>{{ order.namekhach }}</td>
+            <td>{{ order.sdt }}</td>
+            <td>{{ order.email }}</td> -->
+            <td>{{order.name}}</td>
+            <td><img src="{{order.img}}" alt="" style="width: 50px;height: 50px;"></td>
+            <td>{{order.price}}</td>
+            <td>{{order.ram}}</td>
+            <td>{{order.rom}}</td>
+            <td>{{order.note}}</td>
+            <td>{{order.date}}</td>
+            <td>{{order.clock}}</td>
+            <td><button *ngIf="isCancelEnabled" (click)="cancelOrder(order)">Hủy Đơn Hàng</button></td>
+            <td><button (click)="yesOrder(order)">Đã Nhận Hàng</button></td>
+            <!-- Add more table cells as needed for other order details -->
+          </tr>
+        </tbody>
+      </table>
+      <h3 style="text-align: center;">Chúc Bạn Luôn May Mắn Và Thành Công</h3>
+    </div>
+
+    <div *ngIf="orders.length === 0">
+      <p>Không tìm thấy đơn đặt hàng nào.</p>
+
+    </div>
+
+</div>

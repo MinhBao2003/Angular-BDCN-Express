@@ -3,13 +3,15 @@
   <div id="carouselExampleAutoplaying" class="carousel slide div1" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active ">
-        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/15-pro-max-sliding-new-th11.jpg" class="d-block w-100 imgd" alt="...">
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/s24-sliding-pha-gia.png
+        " class="d-block w-100 imgd" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/tab-se-fe-5g-docquyen-001-sliding.png" class="d-block w-100 imgd" alt="...">
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/iphone-15-upgrade-sliding.png
+        " class="d-block w-100 imgd" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/samsung-galaxy-s23-ultra-sliding-th111.png" class="d-block w-100 imgd" alt="...">
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:90/plain/https://dashboard.cellphones.com.vn/storage/tivi-khung-tranh-sliding-th3.jpg" class="d-block w-100 imgd" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -22,9 +24,9 @@
     </button>
   </div>
   <div>
-    <div class="dm1"><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/m14.png" alt="" class="img1"></div>
-    <div><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/gen%209.jpg" alt="" class="img2"></div>
-    <div><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/rb%20laptop.png" alt="" class="img3"></div>
+    <div class="dm1"><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/right%20sv.png" alt="" class="img1"></div>
+    <div><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/right-banner-ipad-gen9-new-th2.jpg" alt="" class="img2"></div>
+    <div><img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/s23-base-right-banner-home.png" alt="" class="img3"></div>
   </div>
   <div class="div3 ">
     <br>
@@ -36,22 +38,22 @@
 
     <!-- <div class="lightning"></div> -->
 
-      <p class="changing-text p1">Sale cuối năm 2023</p>
+      <p class="changing-text p1">Sale noen và cuối năm 2023</p>
       <div class="db">
         <p class="blinking-text ">
           Số ngày còn lại {{ hours }} : {{ minutes | number: '2.0' }} : {{ seconds | number: '2.0' }}
         </p>
       </div>
-      <div class="product-list-container">
+      <!-- <div class="product-list-p">
         <div class="e1">
           <div class="product-list">
             <div *ngFor="let pr of displayedProducts; let i = index" class="product" [ngClass]="{'visible': i === currentIndex}">
-              <a [routerLink]="['/product', pr.id]" class="product-link">
+              <a [routerLink]="['/',pr.prname, pr.id]" class="product-link">
                 <div class="product-inner">
-                  <div><img src="{{ pr.img }}" alt="" class="img4"></div>
+                  <div style="text-align: center;"><img src="{{ pr.img }}" alt="" class="img4"></div>
                   <div class="name">{{ pr.name }}</div><br>
                   <div class="c1">{{ pr.price }}</div>
-                  <div class="hot-text c1">{{ pr.hot }}</div>
+                  <div class="hot-text ">{{ pr.hot }}</div>
                 </div>
               </a>
             </div>
@@ -62,6 +64,23 @@
           <button (click)="previousPage()" [disabled]="currentPage === 1">&lt;</button>
           <button (click)="nextPage()" [disabled]="currentPage === totalPages">&gt;</button>
         </div>
+      </div> -->
+      <div class="phonepr">
+        <div *ngFor="let pr of getCurrentpr();" class="phone-cardpr">
+          <a [routerLink]="['/', pr.prname, pr.id]">
+            <div style="text-align: center;"><img [src]="pr.img" alt="{{ pr.prname }}" class="imgp"></div>
+            <div style="height: 48px;font-weight: bold;color: black;font-size: 14px;"><p>{{ pr.prname }}</p></div>
+            <div style="margin-top: 26%;font-size: 14px;">
+              <p style="color: red;font-weight: bold;">{{ pr.price }}</p>
+              <p style="color: black;font-weight: bold;"><s>{{ pr.hot }}</s></p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="navigation-buttonspr">
+        <button class="navigation-buttonpr" (click)="onPrevImagepr()">&lt;</button>
+        <button class="navigation-buttonpr" (click)="onNextImagepr()">&gt;</button>
       </div>
   </div>
 
@@ -72,23 +91,182 @@
       </div>
       <div class="phone2">
         <span class="sphone">
-          <button class="ap">Apple</button>
-          <button class="ss">Samsung</button>
-          <button class="xm">Xiaomi</button>
-          <button class="rm">Realme</button>
-          <button class="nk">Nokia</button>
-          <button class="as">Asus</button>
-          <button class="xtc">Xem tất cả</button>
+          <a [routerLink]="['/apple']"><button class="ap">Apple</button></a>
+          <a [routerLink]="['/samsung']"><button class="ss">Samsung</button></a>
+          <a [routerLink]="['/xiaomi']"><button class="xm">Xiaomi</button></a>
+          <a [routerLink]="['/realme']"><button class="rm">Realme</button></a>
+          <a [routerLink]="['/nokia']"><button class="nk">Nokia</button></a>
+          <a [routerLink]="['/asus']"><button class="as">Asus</button></a>
+          <a [routerLink]="['/xtcphone']"><button class="xtc">Xem tất cả</button></a>
         </span>
       </div>
     </div>
 
+        <!-- phone-list.component.html -->
+    <div class="phone">
+      <div *ngFor="let phone of getCurrentPhones();" class="phone-card">
+        <a [routerLink]="['/', phone.name, phone.id]">
+          <div style="text-align: center;"><img [src]="phone.img" alt="{{ phone.prname }}" class="imgp"></div>
+          <div style="height: 48px;font-weight: bold;color: black;font-size: 14px;"><p>{{ phone.prname }}</p></div>
+          <div style="margin-top: 26%;font-size: 14px;">
+            <p style="color: red;font-weight: bold;">{{ phone.price }}</p>
+            <p style="color: black;font-weight: bold;"><s>{{ phone.discountedPrice }}</s></p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="navigation-buttons1">
+      <button class="navigation-button" (click)="onPrevImage()">&lt;</button>
+      <button class="navigation-button" (click)="onNextImage()">&gt;</button>
+    </div>
 
   </div>
 
+  <div style="height: 400px;">
+    <div class="phone">
+      <div class="phone1">
+        <h4>LAPTOP</h4>
+      </div>
+      <div class="phone2">
+        <span class="slaptop">
+          <a [routerLink]="['/macbook']"><button class="mb">MacBook</button></a>
+          <a [routerLink]="['/hp']"><button class="hp">Hp</button></a>
+          <a [routerLink]="['/acer']"><button class="ac">Acer</button></a>
+          <a [routerLink]="['/asuslp']"><button class="as">Asus</button></a>
+          <a [routerLink]="['/xtclp']"><button class="xtc">Xem tất cả</button></a>
+        </span>
+      </div>
+    </div>
+
+    <!-- laptop.component.html -->
+    <div class="laptop">
+      <div *ngFor="let laptop of getCurrentLaptops();" class="laptop-item">
+        <!-- Display laptop information here: img, name, price, discountedPrice -->
+        <a [routerLink]="['/', laptop.name, laptop.id]">
+          <div style="text-align: center;"><img [src]="laptop.img" alt="{{ laptop.name }}" class="imgp"/></div>
+          <div style="height: 48px;font-weight: bold;color: black;font-size: 14px;"><p>{{ laptop.prname }}</p></div>
+          <div style="margin-top: 26%;font-size: 14px;">
+            <p style="color: red;font-weight: bold;">{{ laptop.price }}</p>
+            <p style="color: black;font-weight: bold;"><s>{{ laptop.discountedPrice }}</s></p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="navigation"(click)="onPrevImage2()">&lt;</button>
+      <button class="navigation"(click)="onNextImage2()">&gt;</button>
+    </div>
+  </div>
+
+  <div style="height: 400px;">
+    <div class="phone">
+      <div class="phone1">
+        <h4>TIVI</h4>
+      </div>
+      <div class="phone2">
+        <span class="stivi">
+          <a [routerLink]="['/sangsungtv']"><button class="tvss">Samsung</button></a>
+          <a [routerLink]="['/xiaomitv']"><button class="tvxm">Xiaomi</button></a>
+          <a [routerLink]="['/Coocaa']"><button class="cqq">Coocaa</button></a>
+          <a [routerLink]="['/xtctv']"><button class="xtc">Xem tất cả</button></a>
+        </span>
+      </div>
+    </div>
+
+    <!-- tivi.component.html -->
+    <div class="tivi">
+      <div *ngFor="let tivi of getCurrentTivis();" class="tivi-item">
+        <!-- Display laptop information here: img, name, price, discountedPrice -->
+        <a [routerLink]="['/', tivi.name, tivi.id]">
+          <div style="text-align: center;"><img [src]="tivi.img" alt="{{ tivi.name }}" class="imgp"/></div>
+          <div style="height: 48px;font-weight: bold;color: black;font-size: 14px;"><p>{{tivi.nametv}} {{ tivi.prname }}</p></div>
+          <div style="margin-top: 26%;font-size: 14px;">
+            <p style="color: red;font-weight: bold;">{{ tivi.price }}</p>
+            <p style="color: black;font-weight: bold;"><s>{{ tivi.discountedPrice }}</s></p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="controls1">
+      <button class="navigation1"(click)="onPrevImage3()">&lt;</button>
+      <button class="navigation1"(click)="onNextImage3()">&gt;</button>
+    </div>
+  </div>
+
+  <div style="height: 400px;">
+    <div class="phone">
+      <div class="phone1">
+        <h4>TAI GHE</h4>
+      </div>
+      <div class="phone2">
+        <span class="sheadphone">
+          <a [routerLink]="['/bluetouth']"><button class="tnb">Tai nghe Bluetooth</button></a>
+          <a [routerLink]="['/day']"><button class="tncd">Tai nghe có dây</button></a>
+          <a [routerLink]="['/xtctn']"><button class="xtc">Xem tất cả</button></a>
+        </span>
+      </div>
+    </div>
+
+    <!-- headphone.component.html -->
+    <div class="tivi">
+      <div *ngFor="let headphone of getCurrentheadphones();" class="tivi-item">
+        <!-- Display laptop information here: img, name, price, discountedPrice -->
+        <a [routerLink]="['/', headphone.name, headphone.id]">
+          <div style="text-align: center;"><img [src]="headphone.img" alt="{{ headphone.name }}" class="imgp"/></div>
+          <div style="height: 48px;font-weight: bold;color: black;font-size: 14px;"><p>{{ headphone.prname }}</p></div>
+          <div style="margin-top: 26%;font-size: 14px;">
+            <p style="color: red;font-weight: bold;">{{ headphone.price }}</p>
+            <p style="color: black;font-weight: bold;"><s>{{ headphone.discountedPrice }}</s></p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="controls1">
+      <button class="navigation1"(click)="onPrevImage4()">&lt;</button>
+      <button class="navigation1"(click)="onNextImage4()">&gt;</button>
+    </div>
+  </div>
+
+  <div style="height: 400px;">
+    <div class="phone">
+      <div class="phone1">
+        <h4>ĐÔNG HỒ</h4>
+      </div>
+      <div class="phone2">
+        <span class="sclock">
+          <a [routerLink]="['/applewatch']"><button class="dha">Apple Watch</button></a>
+          <a [routerLink]="['/samsungdh']"><button class="dhss">Samsung</button></a>
+          <a [routerLink]="['/xtcdh']"><button class="xtc">Xem tất cả</button></a>
+        </span>
+      </div>
+    </div>
+
+    <!-- clock.component.html -->
+    <div class="tivi">
+      <div *ngFor="let clock of getCurrentclcoks();" class="tivi-item">
+        <!-- Display laptop information here: img, name, price, discountedPrice -->
+        <a [routerLink]="['/', clock.name, clock.id]">
+          <div style="text-align: center;"><img [src]="clock.img" alt="{{ clock.name }}" class="imgp"/></div>
+          <div style="height: 48px;font-weight: bold;color: black;font-size: 14px;"><p>{{ clock.prname }}</p></div>
+          <div style="margin-top: 26%;font-size: 14px;">
+            <p style="color: red;font-weight: bold;">{{ clock.price }}</p>
+            <p style="color: black;font-weight: bold;"><s>{{ clock.discountedPrice }}</s></p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="controls1">
+      <button class="navigation1"(click)="onPrevImage5()">&lt;</button>
+      <button class="navigation1"(click)="onNextImage5()">&gt;</button>
+    </div>
+  </div>
 
 </div>
-<hr style="color: aqua;">
+<hr style="color: black;">
+</div>
 <app-lienhe></app-lienhe>
-</div>
-

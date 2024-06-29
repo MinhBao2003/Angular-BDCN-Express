@@ -1,8 +1,14 @@
 div {
   text-align: center;
   align-items: center;
+  width: 80%;
+  margin-left: 10%;
 }
-
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
 h2 {
   color: blue;
   font-size: 20px;
@@ -16,7 +22,7 @@ label {
 input[type="text"],
 input[type="password"] {
   padding: 5px;
-  width: 200px;
+  width: 49%;
   margin-bottom: 10px;
 }
 

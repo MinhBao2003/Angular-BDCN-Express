@@ -9,17 +9,22 @@ body {
   height: 100vh;
 }
 
+div{
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
 form {
   background-color: #fff;
-  width: 100%;
-  max-width: 1200px; /* Chiều rộng tối đa là 1200px */
+  width: 80%;
+  /* max-width: 1200px; Chiều rộng tối đa là 1200px */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: 163px;
+  /* align-items: center; */
+  margin-left: 10%;
 }
 
 label {

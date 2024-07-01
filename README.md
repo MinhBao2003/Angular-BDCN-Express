@@ -50,10 +50,12 @@ thì ở giỏ hàng menu sẽ hiện số sp đang có
 giao diện giỏ hàng
 có thể tăng giả sp và xóa sp giỏ hàng và tính giả số lượng giá sp khi tăng giảm
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/091516a0-d6f7-483b-a0e6-899c006ca5d9)
-
 +tăng sp
+
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/80415299-1501-44aa-a141-4bac7fd6c416)
+
 +giảm sp
+
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/be56bf52-d2f4-4e8a-9f47-fef84282eaf4)
 khi tích và ấn đặt hàng nó sẽ chuyển qua trang đặt hàng
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/11562dad-345d-42d3-b1d7-faf96cb98ae1)
@@ -77,13 +79,26 @@ giao diện dã nhận hàng
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/a1d87db0-eae0-4198-ac05-aac13dbc2385)
 giao diện dơn huy khi huy thành công
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/ae41cef0-3abd-4a50-af6a-2f92a30d9924)
+//V.trang đăng nhập
+giao diện http://localhost:4200/dangnhap
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/f39ec3a0-c309-4500-b137-2a401bf5ba2e)
+khi khong có tk có thể đk http://localhost:4200/dangky
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/f6bb8982-520d-4e2d-aa0d-0a83333a0091)
+khi ấn đk dư liệu lưu vào api và tự đông chuyển lại trang đăng nhập 
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7ed99ede-6678-4e87-ba1a-9f5e7cadb439)
+khi có tk có thể đăng nhập
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7ed99ede-6678-4e87-ba1a-9f5e7cadb439)
+khi ấn đăng nhập ở menu phần login sẽ hiện tên khách hàng
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/9b828d92-a073-4cac-a819-6b8a217d3da2)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7ed99ede-6678-4e87-ba1a-9f5e7cadb439)
 //VI.Trang vitri
 giao diện http://localhost:4200/vitri
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/de6973c4-5466-4842-aec6-21d3a341d7e3)
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/3d6c2352-c11c-4332-8b1f-f5cf6b5b1d03)
 khi ấn đặt lịch hẹn vs của hàng nó sẽ lưu vào data
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/154dfe5d-49cb-4939-8d18-3466f2382d9b)
-
+*phần đơn hàng đã review trong cái giỏ hàng hủy , nhận , giỏ hàng 
+* phần đặt hàng gióng chức năng giỏ hàng nên làm cái 
 
 
 

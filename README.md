@@ -109,8 +109,11 @@ khi ấn đk dư liệu lưu vào api và tự đông chuyển lại trang đăn
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7ed99ede-6678-4e87-ba1a-9f5e7cadb439)
 
 khi có tk có thể đăng nhập
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/d2487478-c73c-4e2c-80cc-d89234aefeac)
+
 khi ấn đăng nhập ở menu phần login sẽ hiện tên khách hàng
-![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7ed99ede-6678-4e87-ba1a-9f5e7cadb439)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/26a5d5aa-27c9-4ca2-9105-893c575e02a1)
+
 //VI.Trang vitri
 giao diện http://localhost:4200/vitri
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/de6973c4-5466-4842-aec6-21d3a341d7e3)

@@ -76,7 +76,9 @@ có thể tăng giả sp và xóa sp giỏ hàng và tính giả số lượng g
 +giảm sp
 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/be56bf52-d2f4-4e8a-9f47-fef84282eaf4)
+
 khi tích và ấn đặt hàng nó sẽ chuyển qua trang đặt hàng
+
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/11562dad-345d-42d3-b1d7-faf96cb98ae1)
 //IV.trang đặt hàng http://localhost:4200/dondathang
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/a0d09713-3f2c-428e-9f26-26ee083f05c9)

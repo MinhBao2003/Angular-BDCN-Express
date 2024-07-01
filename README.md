@@ -103,14 +103,13 @@ giao diện dơn huy khi huy thành công
 //V.trang đăng nhập
 giao diện http://localhost:4200/dangnhap
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/f39ec3a0-c309-4500-b137-2a401bf5ba2e)
-khi khong có tk có thể đk http://localhost:4200/dangky
+khi không có tk có thể đk http://localhost:4200/dangky
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/f6bb8982-520d-4e2d-aa0d-0a83333a0091)
 khi ấn đk dư liệu lưu vào api và tự đông chuyển lại trang đăng nhập 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7ed99ede-6678-4e87-ba1a-9f5e7cadb439)
+
 khi có tk có thể đăng nhập
-![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7ed99ede-6678-4e87-ba1a-9f5e7cadb439)
 khi ấn đăng nhập ở menu phần login sẽ hiện tên khách hàng
-![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/9b828d92-a073-4cac-a819-6b8a217d3da2)
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7ed99ede-6678-4e87-ba1a-9f5e7cadb439)
 //VI.Trang vitri
 giao diện http://localhost:4200/vitri

@@ -15,6 +15,25 @@
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/6dedf987-2d97-4ee8-a48b-8be9e2594077)
 //phần điện thoại
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/df6286ff-444d-4154-a818-19fc1bfe9605)
+khi ấn buttom xem tất cả 
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7d845ea1-3eb0-4d61-88ad-9c4654694a92)
+giao diện xem tát cả
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/1e851f2e-54a2-4f03-8e2d-6bfb6b849706)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/463906ee-cad5-48d4-ad22-a8d4b8bfb9c9)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/16135a74-63a3-4b4b-bf07-30adc0bd81d0)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/ac190c0f-005f-4669-8f82-a09dbdc2a8fb)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/a987666f-b535-4c0f-8b1a-de64f38736bc)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/5077589b-5b5e-4272-89e6-6ea4061a9945)
+khi ấn button chơi game nó sẽ lọc ra các loại máy có só ram 12gb hoặc đt của hẳng asus cái nút dương lượng lớn tương tự
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/63d6d445-b19c-4074-b57e-22253e0bdf3e)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/e8f6f878-babd-428b-be58-d9787b1c694f)
+khi chọn ram 12gb nó sẽ lọc máy có 12gb cái bộ nhớ trọng và khích thước màn hình cũng tương tự
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/020039e9-e5e6-462e-bbff-8cea3a50b374)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/c2eaa0a8-ccfc-4099-8edf-d13e38d89f6f)
+khi ấn buttom giá cao - thấp
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/60ac75c8-b36b-4443-a943-f6f880fd1973)
+nó sẽ lọc theo giá cao thấp sản phẩm bạn đã select khi chọn ram và bộ nhớ trong hoặc khích thước màn hình , và khi bạn không select 3 cái đó nó sẽ lọc tất cả giá sản phảm cao đến thấp (có thể làm mới lại trang khi select ba cái trên hoặc phàn chới game dung lượng và ngược lại ) các còn lại tivi latop ,.. tương tự
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/8dd416bd-9dff-44a1-b6c8-ab842cd5c2b8)
 //phần laptop
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/857081bf-8ed3-4404-b380-c1265f525286)
 //phần tivi
@@ -25,7 +44,7 @@
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/777d0725-ad5f-4923-9ec5-53585e0dd12c)
 //phần liên hệ
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/674802b2-4a1a-4c18-90d2-2ccff322f174)
-//II.phần thắc mắc 
+//II.phần thắc mắc (liện hệ 2) 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/e7fb865c-d454-4d47-9cc6-565672d670da)
 //phần chiêu tiết sản phẩm http://localhost:4200/%C4%90i%E1%BB%87n-tho%E1%BA%A1i-Samsung-Galaxy-A54-5G/1
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/39d80f94-21b6-4954-97b5-a08bc01c4adf)

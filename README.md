@@ -1,35 +1,49 @@
 ** muốn chạy đc angular phải cài node js từ trang chủ của node js có thể cài node pb v21.7.3 hoặc mới nhất : 
-```bash
+`
 https://nodejs.org/en/download/prebuilt-installer/current
-bash`
+`
+
 cài xong node có thể mở cmd vs quyền administration và cài angular js như hình :
 `
 npm install -g @angular/cli
-\```
+`
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/47eaf9ea-19b1-4e24-a540-079c8741743d)
-** do project có 1 số phần sài boostap nên phải cài boostrap : npm install bootstrap
+
+** do project có 1 số phần sài boostap nên phải cài boostrap : 
+`
+npm install bootstrap
+`
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/010089d2-739a-47d5-81d7-4de9b0368487)
+
 mở project trong visual code và bấm : 
-\```bash
+
+`
 ctrl + shift + `
-\```
+`
+
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/d2a186a1-8dea-4043-9e69-9402ec152d88)
 
 chọn WebBanHang
 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/ccfefe32-0c5a-4ee7-b513-58746dd8af1b)
 
-muốn project gõ : 
-\```bash
+muốn chạy serve project gõ : 
+
+`
 ng serve
-\```
+`
+
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/078e83da-a4d0-4fef-aa3d-7f4a41464323)
 
 chạy dự án thành công coppy phàn ' 
-\```bash
+
+`
 http://localhost:4200/ 
-\```
-' past vào gloogle nhấn enter
+
+`
+
+' past vào gloogle nhấn enter.
+
 lưu khi chưa chạy dữ liệu api lên thì 1 số dữ sẩn sẽ ko 
 
 

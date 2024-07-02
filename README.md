@@ -1,4 +1,5 @@
 ** muốn chạy đc angular phải cài node js từ trang chủ của node js có thể cài node pb v21.7.3 hoặc mới nhất : 
+
 `
 https://nodejs.org/en/download/prebuilt-installer/current
 `
@@ -8,12 +9,15 @@ cài xong node có thể mở cmd vs quyền administration và cài angular js 
 `
 npm install -g @angular/cli
 `
+
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/47eaf9ea-19b1-4e24-a540-079c8741743d)
 
 ** do project có 1 số phần sài boostap nên phải cài boostrap : 
+
 `
 npm install bootstrap
 `
+
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/010089d2-739a-47d5-81d7-4de9b0368487)
 
 mở project trong visual code và bấm : 
@@ -36,19 +40,13 @@ ng serve
 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/078e83da-a4d0-4fef-aa3d-7f4a41464323)
 
-chạy dự án thành công coppy phần ' 
+chạy dự án thành công coppy phần '`http://localhost:4200/ `' past vào gloogle nhấn enter.
+
+** lưu ý khi chưa chạy project ko dữ liệu api lên thì 1 số dữ liệu sẽ ẩn ko
+link git data node Express:
 
 `
-http://localhost:4200/ 
 `
-
-' past vào gloogle nhấn enter.
-
-lưu khi chưa chạy dữ liệu api lên thì 1 số dữ sẩn sẽ ko 
-
-
-
-
 
 //đường dẫn src/app/componets/... chứa code html css và jsx của các trang giao diện web và chi tiết sp ,..
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7a3700a6-5ecb-4d61-9dc6-68edf7b8efb7)

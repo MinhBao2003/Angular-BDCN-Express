@@ -143,7 +143,7 @@ giao diện
 chức nag hủy hàng *đang update lổi khi hủy khi ko 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/53743c18-bd71-435c-a638-56338aed3100)
 khi ấn đã nhận hàng thì thông đơn hàng sẽ xóa và lưu qua đã nhận hàng 
-![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/1d68c8fd-9f49-4013-b17a-a95edd99fc9)
+![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/e546a2b9-cded-4c01-a77c-72522af7dc91)
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/476cd71b-d8e6-4caa-903d-473c6dd9c6a9)
 lưu dữ liệu 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7eac1a18-fa75-4312-b8da-abae87e0c5b6)

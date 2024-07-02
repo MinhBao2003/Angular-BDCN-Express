@@ -23,7 +23,7 @@ npm install bootstrap
 mở project trong visual code và bấm : 
 
 `
-ctrl + shift + `
+ctrl + shift + ~
 `
 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/d2a186a1-8dea-4043-9e69-9402ec152d88)

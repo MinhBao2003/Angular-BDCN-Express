@@ -46,6 +46,7 @@ chạy dự án thành công coppy phần '`http://localhost:4200/ `' past vào 
 link git data node Express:
 
 `
+https://github.com/MinhBao2003/Express-Agl-BDCN.git
 `
 
 //đường dẫn src/app/componets/... chứa code html css và jsx của các trang giao diện web và chi tiết sp ,..

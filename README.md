@@ -172,8 +172,8 @@ giao diện http://localhost:4200/vitri
 khi ấn đặt lịch hẹn vs của hàng nó sẽ lưu vào data
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/154dfe5d-49cb-4939-8d18-3466f2382d9b)
 
-*phần đơn hàng đã review trong cái giỏ hàng hủy , nhận , giỏ hàng 
-* phần đặt hàng gióng chức năng giỏ hàng nên làm cái 
+88*phần đơn hàng đã review trong cái giỏ hàng hủy , nhận , giỏ hàng 
+
 
 
 

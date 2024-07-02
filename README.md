@@ -149,7 +149,7 @@ lưu dữ liệu
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/7eac1a18-fa75-4312-b8da-abae87e0c5b6)
 giao diện dã nhận hàng
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/a1d87db0-eae0-4198-ac05-aac13dbc2385)
-giao diện dơn huy khi huy thành công
+giao diện dơn huy khi hủy thành công
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/ae41cef0-3abd-4a50-af6a-2f92a30d9924)
 //V.trang đăng nhập
 giao diện http://localhost:4200/dangnhap

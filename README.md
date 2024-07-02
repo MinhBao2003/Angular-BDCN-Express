@@ -1,9 +1,9 @@
 ** muốn chạy đc angular phải cài node js từ trang chủ của node js có thể cài node pb v21.7.3 hoặc mới nhất : 
 ```bash
 https://nodejs.org/en/download/prebuilt-installer/current
-bash```
+bash`
 cài xong node có thể mở cmd vs quyền administration và cài angular js như hình :
-\```bash
+`
 npm install -g @angular/cli
 \```
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/47eaf9ea-19b1-4e24-a540-079c8741743d)

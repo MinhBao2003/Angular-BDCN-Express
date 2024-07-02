@@ -4,6 +4,7 @@ https://nodejs.org/en/download/prebuilt-installer/current
 `
 
 cài xong node có thể mở cmd vs quyền administration và cài angular js như hình :
+
 `
 npm install -g @angular/cli
 `
@@ -35,11 +36,10 @@ ng serve
 
 ![image](https://github.com/MinhBao2003/Angular-BDCN-Express/assets/146474537/078e83da-a4d0-4fef-aa3d-7f4a41464323)
 
-chạy dự án thành công coppy phàn ' 
+chạy dự án thành công coppy phần ' 
 
 `
 http://localhost:4200/ 
-
 `
 
 ' past vào gloogle nhấn enter.
